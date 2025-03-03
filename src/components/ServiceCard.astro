@@ -1,0 +1,140 @@
+---
+import { Image } from 'astro:assets';
+
+const images = import.meta.glob<{ default: ImageMetadata }>(
+  "/src/assets/*.{jpeg,jpg,png,gif,svg}"
+);
+
+export interface CoachingCardProps {
+  title: string;
+  subtitle: string;
+  description: string;
+  buttonText: string;
+  buttonLink: string;
+  imageSrc: string;
+  altText: string;
+}
+
+const {
+  title,
+  subtitle,
+  description,
+  buttonText,
+  buttonLink,
+  imageSrc,
+  altText,
+} = Astro.props;
+---
+
+<div class="coaching-card">
+  <div class="background">
+    <Image src={images[imageSrc]()} alt={altText} class="background-image" />
+  </div>
+  <div class="content">
+    <div class="sub">
+      <svg
+        width="64"
+        height="3"
+        viewBox="0 0 64 3"
+        fill="none"
+        xmlns="http://www.w3.org/2000/svg"
+      >
+        <line y1="1.5" x2="64" y2="1.5" stroke="#F0840E" stroke-width="3"
+        ></line>
+      </svg>
+      <span class="subtitle">{subtitle}</span>
+    </div>
+    <h2 class="title">{title}</h2>
+    <p class="description">{description}</p>
+    <a href={buttonLink} class="cta-button">{buttonText} →</a>
+  </div>
+</div>
+
+<style>
+  .coaching-card {
+    /* position: relative; */
+    width: 100%;
+    max-width: 400px;
+    /* background: white; */
+    /* border-radius: 10px; */
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    /* padding: 20px; */
+  }
+
+  .background {
+    /* position: absolute; */
+    top: 0;
+    left: 0;
+    width: 100%;
+    /* height: 100%; */
+    /* z-index: -1; */
+  }
+
+  .background-image {
+    width: 100%;
+    height: 270px;
+    object-fit: cover;
+    opacity: 0.5;
+  }
+
+  .content {
+    /* make a white shadow at the top */
+    padding: 0 2rem;
+    padding-bottom: 2rem;
+    position: relative;
+    z-index: 10;
+  }
+
+  .content .sub {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+  .subtitle {
+    font-size: 14px;
+    font-weight: bold;
+    text-transform: uppercase;
+  }
+
+  .title {
+    font-size: 32px;
+    font-weight: 700;
+    color: var(--tertiary);
+    margin: 10px 0;
+  }
+
+  .description {
+    font-size: 16px;
+    color: var(--font-primary);
+  }
+
+  .cta-button {
+    display: inline-block;
+    background-color: var(--accent);
+    color: black;
+    font-size: 16px;
+    padding: 10px 15px;
+    font-weight: bold;
+    text-decoration: none;
+    margin-top: 10px;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    transition: ease-in-out 0.3s;
+  }
+
+  .cta-button:hover {
+    background-color: var(--accent);
+    transform: scale(1.01);
+    box-shadow: 0px 8px 8px rgba(0, 0, 0, 0.25);
+  }
+
+  @media (max-width: 720px) {
+    .coaching-card {
+      max-width: 100%;
+    }
+
+    .title {
+      font-size: 24px;
+    }
+  }
+</style>

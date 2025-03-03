@@ -1,0 +1,257 @@
+---
+import BaseHead from "../components/BaseHead.astro";
+import Header from "../components/Header.astro";
+import Footer from "../components/Footer.astro";
+import { SITE_TITLE, SITE_DESCRIPTION } from "../consts";
+import Consultation from "../components/Consultation.astro";
+import { getCollection } from "astro:content";
+
+const resources = (await getCollection("resources")).sort(
+  (a, b) => a.data.id - b.data.id
+);
+
+
+// from all posts if the image path is like public/image.png remove public and add /image.png
+resources.forEach((resource) => {
+  // loop in the items array
+  resource.data.items.forEach((item) => {
+    item.logo = item.logo?.replace("/public", "");
+  });
+});
+
+import { Image } from 'astro:assets';
+
+const images = import.meta.glob<{ default: ImageMetadata }>(
+  "/src/assets/*.{jpeg,jpg,png,gif,svg}"
+);
+---
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <BaseHead
+      title={`${SITE_TITLE} - Resources`}
+      description={SITE_DESCRIPTION}
+    />
+  </head>
+  <body>
+    <Header />
+    <main>
+      <div class="intro">
+        <h1>
+          We leverage the <span>Full Potential </span><br />
+          of the
+          <span>Presales Ecosystem</span>
+        </h1>
+
+        <svg
+          width="643"
+          height="5"
+          viewBox="0 0 643 5"
+          fill="none"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <line
+            x1="0.497236"
+            y1="3.10108"
+            x2="642.495"
+            y2="1.50009"
+            stroke="white"
+            stroke-width="3"></line>
+        </svg>
+
+        <p>
+          In today’s fast-paced and competitive market, the presales function
+          plays a critical role in bridging the gap between technical expertise
+          and customer needs. To remain competitive and drive sustainable
+          growth, it’s essential to leverage the full potential of the presales
+          ecosystem.
+        </p>
+      </div>
+
+      <section>
+        <div class="container">
+          {
+            resources.map((category, index) => (
+              <div class="category">
+                <div class="category-title">
+                  {category.data.category} <span>{category.data.secondarytitle}</span>
+                </div>
+                <div class="grid">
+                  {category.data.items.map((item, idx) => (
+                    <div class="card">
+                      <Image src={images[item.logo]()} alt="resource" />
+                      <div class="card-description">{item.description}</div>
+                    </div>
+                  ))}
+                </div>
+              </div>
+            ))
+          }
+        </div>
+      </section>
+
+      <Consultation isServicesPage={true} />
+    </main>
+    <Footer />
+  </body>
+</html>
+
+<style>
+  main .intro {
+    /* margin-bottom: 1rem; */
+    width: 100%;
+    background-color: var(--primary);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 4rem 0;
+  }
+
+  img {
+    border-radius: 0 !important;
+  }
+
+  main .intro h1 {
+    color: white;
+    text-align: center;
+    font-size: 64px;
+    margin: 0;
+    padding: 1rem;
+  }
+
+  main .intro h1 span {
+    color: var(--accent);
+  }
+  main .intro p {
+    color: white;
+    text-align: center;
+    font-size: 18px;
+    margin: 0;
+    padding: 1rem;
+    width: 50%;
+  }
+
+  .intro svg {
+    width: 90%;
+  }
+
+  section {
+    background-color: var(--primary);
+    width: 100%;
+  }
+  .container {
+    max-width: 1440px;
+    margin: auto;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    flex-direction: column;
+    gap: 20px;
+  }
+
+  .category {
+    padding: 20px;
+    border-radius: 10px;
+  }
+
+  .category-title {
+    font-size: 36px;
+    font-weight: 700;
+    color: white;
+    margin-bottom: 15px;
+    text-align: center;
+  }
+
+  .category-title span {
+    color: var(--accent) !important;
+  }
+
+  .grid {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+  }
+
+  .card {
+    background: white;
+    color: black;
+    padding: 15px;
+    box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.2);
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    gap: 20px;
+  }
+
+  .card img {
+  width: 180px; /* Set a fixed width */
+  height: 76px; /* Set a fixed height */
+  object-fit: contain; /* Ensures the entire image fits within the box without distortion */
+  object-position: center; /* Centers the image */
+  margin-bottom: 10px;
+}
+
+  .card-title {
+    font-size: 18px;
+    font-weight: bold;
+    margin-bottom: 5px;
+    text-align: center;
+    width: 100%;
+  }
+
+  .card-description {
+    font-size: 14px;
+    line-height: 1.4;
+  }
+
+  @media (max-width: 768px) {
+    main .intro h1 {
+      font-size: 28px;
+    }
+
+    main .intro p {
+      font-size: 16px;
+      width: 80%;
+      padding: 0;
+    }
+
+    main .intro {
+      padding: 1rem 0;
+    }
+
+    .container {
+      max-width: 90%;
+      margin: auto;
+      display: grid;
+      grid-template-columns: repeat(1, 1fr);
+      flex-direction: column;
+      gap: 20px;
+    }
+
+
+
+    .card {
+      flex-direction: column;
+      gap: 10px;
+      padding: 10px;
+    }
+
+    .category-title {
+      font-size: 24px;
+    }
+
+    .card-description {
+      font-size: 14px;
+    }
+
+    .category {
+      padding: 10px;
+    }
+
+
+  }
+</style>
+
+

@@ -1,0 +1,229 @@
+---
+const { url } = Astro;
+const currentPath = url.pathname;
+
+import { Image } from 'astro:assets';
+
+const images = import.meta.glob<{ default: ImageMetadata }>(
+  "/src/assets/*.{jpeg,jpg,png,gif,svg}"
+);
+
+---
+
+<header>
+  <nav>
+    <a href="/" aria-label="TotalTech Consulting Logo which also acts as home link">
+      <Image src={images["/src/assets/logo.png"]()} alt="TotalTech Consulting Logo" />
+    </a>
+
+    <ol class="internal-links">
+      <li><a class="menuBtn" href="/" aria-label="link to home page">Home</a></li>
+      <li><a href="/services" class="menuBtn" aria-label="link to services page">Services</a></li>
+      <li><a href="/blog" class="menuBtn" aria-label="link to blog page">Blog</a></li>
+      <li><a href="/resources" class="menuBtn" aria-label="link to resources page">Resources</a></li>
+      <li><a href="/about" class="menuBtn" aria-label="link to about page">About Me</a></li>
+      <li><a class="ctaBtn" href="/contact" aria-label="link to contact page">Contact</a></li>
+    </ol>
+    <!--
+    <div class="internal-links">
+      <a class="menuBtn" href="/">Home</a>
+      <a href="/services" class={currentPath === "/services" ? "menuBtn active" : "menuBtn "}>Services</a>
+      <a href="/blog" class={currentPath === "/blog" ? "menuBtn active" : "menuBtn "}>Blog</a>
+      <a href="/resources" class={currentPath === "/resources" ? "menuBtn active" : "menuBtn "}>Resources</a>
+      <a href="/about" class={currentPath === "/about" ? "menuBtn active" : "menuBtn "}>About Me</a>
+      <a class="ctaBtn" href="/contact" class="menu-button">Contact</a>
+    </div>
+     -->
+    <!-- hamburger button -->
+    <button class="hamburger-button" aria-label="Burger Menu for navigation">
+      <svg
+        viewBox="0 0 32 32"
+        enable-background="new 0 0 32 32"
+        id="Editable-line"
+        version="1.1"
+        xml:space="preserve"
+        xmlns="http://www.w3.org/2000/svg"
+        xmlns:xlink="http://www.w3.org/1999/xlink"
+        fill="#000000"
+        ><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g
+          id="SVGRepo_tracerCarrier"
+          stroke-linecap="round"
+          stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"
+          ><line
+            fill="none"
+            id="XMLID_103_"
+            stroke="#000000"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            stroke-miterlimit="10"
+            stroke-width="2"
+            x1="7"
+            x2="25"
+            y1="16"
+            y2="16"></line><line
+            fill="none"
+            id="XMLID_102_"
+            stroke="#000000"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            stroke-miterlimit="10"
+            stroke-width="2"
+            x1="7"
+            x2="25"
+            y1="25"
+            y2="25"></line><line
+            fill="none"
+            id="XMLID_101_"
+            stroke="#000000"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            stroke-miterlimit="10"
+            stroke-width="2"
+            x1="7"
+            x2="25"
+            y1="7"
+            y2="7"></line></g
+        ></svg
+      >
+    </button>
+  </nav>
+</header>
+<style>
+  header {
+    margin: 0;
+    padding: 1rem;
+    background: white;
+    box-shadow: 0 2px 8px rgba(var(--black), 5%);
+  }
+  h2 {
+    margin: 0;
+    font-size: 1em;
+  }
+
+  h2 a,
+  h2 a.active {
+    text-decoration: none;
+    font-size: 18px;
+  }
+  nav {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    max-width: 1440px;
+    margin: 0 auto;
+  }
+  a {
+    padding: 8px 16px;
+    color: var(--black);
+    text-decoration: none;    
+  }
+  a.active {
+    text-decoration: none;
+    border-bottom-color: var(--accent);
+    color: var(--font-secondary);
+    background-color: var(--tertiary);
+  }
+  img {
+    width: 200px;
+    padding: 0rem 0.5rem;
+  }
+  .menu-button {
+    background: var(--accent);
+    padding: 8px 24px !important;
+  }
+        
+  .menuBtn {
+    display: inline-flex;
+    transition: transform 0.15s ease-in-out, background-color 0.125s ease-in-out, color 0.125s ease-in-out;
+  }
+
+  .menuBtn:hover {
+    transform: scale(1.1);
+    background-color:var(--primary);
+    color: white;
+  }
+  
+
+  .ctaBtn{
+    display: inline-flex;
+    background-color:var(--accent);
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    transition: ease-in-out 0.15s;
+  }
+  .ctaBtn:hover{
+    transform: scale(1.02);
+    box-shadow: 0px 8px 8px rgba(0, 0, 0, 0.25);
+  }
+
+  .hamburger-button {
+    display: none;
+  }
+
+  .internal-links{
+    display: flex;
+    gap: 0.5rem;
+    list-style: none; /* Removes bullet points */
+    
+    transition: ease-in-out 0.15s;
+  }
+
+  @media (max-width: 779px) {
+    .internal-links {
+      display: none;
+      flex-direction: column;
+      position: absolute;
+      top: 80px;
+      gap: 0.5rem;
+      left: 0;
+      background: white;
+      height: 100%;
+      width: 100vw;
+      z-index: 100;
+    }
+
+    .internal-links a {
+
+      text-align: center;
+    }
+    
+
+    .menuBtn:hover {
+      transform: scale(1);
+      background-color:var(--primary);
+      color: white;
+    }
+    .ctaBtn:hover{
+      transform: scale(1);
+      box-shadow: 0px 8px 8px rgba(0, 0, 0, 0.25);
+    }
+
+    .hamburger-button {
+      display: block;
+      width: 50px;
+      height: 50px;
+      background: none;
+      border: none;
+    }
+
+    img {
+      width: 150px;
+      padding: 0rem 0.5rem;
+    }
+  }
+</style>
+
+<script>
+document.addEventListener("DOMContentLoaded", function () {
+  const hamburgerButton = document.querySelector(".hamburger-button");
+  const internalLinks = document.querySelector(".internal-links");
+
+  hamburgerButton?.addEventListener("click", () => {
+    if (internalLinks instanceof HTMLElement) {
+      // Get computed style instead of inline style
+      const isHidden = getComputedStyle(internalLinks).display === "none";
+      internalLinks.style.display = isHidden ? "flex" : "none";
+    }
+  });
+});
+
+</script>

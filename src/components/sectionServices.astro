@@ -1,0 +1,263 @@
+---
+import { Image } from 'astro:assets';
+
+const images = import.meta.glob<{ default: ImageMetadata }>(
+  "/src/assets/*.{jpeg,jpg,png,gif,svg}"
+);
+
+interface Props {
+  titlemain: string;
+  titlesecondary: string;
+  id: string;
+  parasmall: string;
+  paras: string[];
+  imgPath: string;
+  bgdark: boolean;
+  inverted: boolean;
+  about: string;
+  parasabout: string[];
+}
+
+const {
+  titlemain,
+  titlesecondary,
+  id,
+  parasmall,
+  paras,
+  parasabout,
+  imgPath,
+  bgdark,
+  inverted,
+  about,
+} = Astro.props as Props;
+---
+
+<section
+  class="container"
+  id={id}
+  style={`background: ${bgdark ? "var(--primary)" : "transparent"};`}
+>
+  <main style={`flex-direction: ${inverted ? "row-reverse" : "row"};`}>
+    <div class="left">
+      <Image src={images[imgPath]()} alt="Services" class="services-img" />
+    </div>
+    <div class="right">
+      <h1 class="primary" style={`color: ${bgdark ? "white" : "black"};`}>
+        {titlemain}
+      </h1><h1 class="secondary">{titlesecondary}</h1>
+      <svg
+        style={`display: ${bgdark ? "flex" : "none"};`}
+        width="642"
+        height="5"
+        viewBox="0 0 642 5"
+        fill="none"
+        xmlns="http://www.w3.org/2000/svg"
+      >
+        <line
+          x1="-0.00374064"
+          y1="3.10108"
+          x2="641.994"
+          y2="1.50009"
+          stroke="white"
+          stroke-width="3"></line>
+      </svg>
+
+      <svg
+        style={`display: ${bgdark ? "none" : "flex"};`}
+        width="642"
+        height="6"
+        viewBox="0 0 642 6"
+        fill="none"
+        xmlns="http://www.w3.org/2000/svg"
+      >
+        <line
+          x1="-0.00374064"
+          y1="3.70215"
+          x2="641.994"
+          y2="2.10116"
+          stroke="#334046"
+          stroke-width="3"></line>
+      </svg>
+
+      <p class="about">{about}</p>
+      <p class="para-small" style={`color: ${bgdark ? "white" : "black"};`}>
+        {parasmall}
+      </p>
+
+      <p class="para-big" style={`color: ${bgdark ? "white" : "black"};`}>
+        {
+          paras &&
+            paras.map((para) => (
+              <p
+                class="para-big"
+                style={`color: ${bgdark ? "white" : "black"};`}
+              >
+                {para}
+              </p>
+            ))
+        }
+      </p>
+
+      <p class="para-about" style={`color: ${bgdark ? "white" : "black"};`}>
+        {
+          parasabout &&
+            parasabout.map((para) => (
+              <p
+                class="para-about"
+                style={`color: ${bgdark ? "white" : "black"};`}
+                set:html={para}
+              />
+            ))
+        }
+      </p>
+    </div>
+  </main>
+</section>
+
+<style>
+  .container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 4rem 0rem;
+    flex-direction: row;
+    width: 100%;
+    gap: -1rem;
+  }
+
+  svg {
+    margin: 1rem 0rem;
+    width: 100%;
+  }
+
+  main {
+    max-width: 1440px;
+    margin: auto;
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+    padding: 1rem;
+  }
+
+  .left {
+    width: 50%;
+    /* float the content to right */
+    display: flex;
+    /* justify-content: flex-end; */
+    align-items: center;
+    justify-content: center;
+  }
+
+  /* left img should be perfect square , originally the image is rectangle*/
+  .services-img {
+    width: 500px;
+    height: 500px;
+  }
+
+  .right {
+    width: 50%;
+    flex: 1;
+    /* take full height of container */
+  }
+
+  h1 {
+    font-size: 64px;
+    font-weight: 700;
+    letter-spacing: -2px;
+    display: inline-block;
+    /* gap to right */
+    margin-right: 1rem;
+    line-height: 0px;
+  }
+
+  /* .primary{
+        color: white;
+
+    } */
+
+  .secondary {
+    color: var(--accent);
+  }
+
+  p {
+    /* color: white; */
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 16px;
+  }
+
+  .para-small {
+    font-size: 14px !important;
+    font-weight: 300;
+  }
+
+  .about {
+    font-size: 16px;
+    font-weight: 700;
+  }
+
+  .para-about {
+    /* color: white; */
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 22px;
+  }
+
+  @media (max-width: 720px) {
+    .container {
+      flex-direction: column;
+      gap: 2rem;
+    }
+
+    main {
+      gap: 1rem;
+      flex-direction: column !important;
+      max-width: 90%;
+    }
+
+    .left {
+      width: 100%;
+      /* float the content to right */
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .services-img {
+      width: 300px;
+      height: auto;
+
+      /* height: 500px; */
+    }
+
+    .right {
+      width: 100%;
+      flex: 1;
+      /* take full height of container */
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+    }
+
+    h1 {
+      font-size: 32px;
+      font-weight: 700;
+      letter-spacing: -2px;
+      display: inline-block;
+      /* gap to right */
+      margin-right: 1rem;
+      line-height: 2rem;
+    }
+
+    .para-small {
+      font-size: 14px !important;
+      font-weight: 300;
+      text-align: center;
+    }
+
+    p {
+      text-align: center;
+    }
+  }
+</style>

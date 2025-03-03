@@ -1,0 +1,22 @@
+{
+    "id":9,
+
+    "category": "Simplify",
+    "secondarytitle": "Proposals",
+    "items": [
+      {
+        "description": "Qvidian provides proposal automation for presales teams, helping them efficiently create, store, and customize proposals with reusable content.",
+        "logo": "/src/assets/resources21.png"
+      },
+      {
+        "description": "Proposify simplifies the process of creating quotes. By streamlining proposal creation, it saves time and ensures that sales teams can deliver polished proposals.",
+        "logo": "/src/assets/resources22.png"
+
+      },
+      {
+        "description": "GetAccept helps sales teams deliver personalized video proposals, creating more engaging and tailored content for prospects.",
+        "logo": "/src/assets/resources23.png"
+      }
+    ]
+  }
+  

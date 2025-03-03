@@ -1,0 +1,18 @@
+{
+    "id":4,
+
+    "category": "Proof of",
+    "secondarytitle": "Concept",
+    "items": [
+      {
+        "description": "Proov.io specializes in simplifying and streamlining the process of delivering Proof-of-Concepts (PoCs) for presales teams.",
+        "logo": "/src/assets/resources11.png"
+      },
+      {
+        "description": "Homerun is designed to manage complex evaluations by centralizing feedback, decision-making processes, and workflows.",
+        "logo": "/src/assets/resources12.png"
+
+      }
+    ]
+  }
+  

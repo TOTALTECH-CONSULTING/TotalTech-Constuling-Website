@@ -1,0 +1,84 @@
+---
+import BaseHead from "../components/BaseHead.astro";
+import Header from "../components/Header.astro";
+import Footer from "../components/Footer.astro";
+import { SITE_TITLE, SITE_DESCRIPTION } from "../consts";
+import ContentSection from "../components/sectionServices.astro";
+import Consultation from "../components/Consultation.astro";
+
+import { Image } from 'astro:assets';
+
+const images = import.meta.glob<{ default: ImageMetadata }>(
+  "/src/assets/*.{jpeg,jpg,png,gif,svg}"
+);
+---
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <BaseHead
+      title={`${SITE_TITLE} - About Me`}
+      description={SITE_DESCRIPTION}
+    />
+  </head>
+  <body>
+    <Header />
+    <main>
+      <ContentSection
+        titlemain="Bertrand "
+        ,
+        titlesecondary="Lalanne"
+        ,
+        about="Strategic Technology Leader | Presales Expert | Driving Business Innovation and Growth​"
+        parasmall=" "
+        ,
+        parasabout={[
+          `With over <strong>three decades of experience </strong> in the IT industry, Bertrand brings a deep understanding of <strong>technology, strategy, and leadership</strong> to help organizations navigate complex challenges and achieve transformative outcomes. His career spans senior roles across <strong>global technology leaders</strong>, where he has consistently driven business growth, scaled high-performing teams, and delivered customer-focused solutions.`,
+          "At Dell Technologies, Bertrand served as <strong>Vice President of Presales</strong> for Europe, the Middle East, and Africa (EMEA), leading the integration of presales operations during the historic Dell-EMC merger. He was responsible for scaling a top-talent team, protecting and growing the Data Center portfolio (Compute, Network, Storage, and Data Protection), and helping customers leverage technology to <strong>solve critical business challenges</strong>. Prior roles included <strong>driving innovation</strong> in emerging technologies and leading <strong>presales transformations</strong> across regions, with oversight of hundreds of engineers and billions in annual revenue.",
+        ]}
+        paras={[]}
+        imgPath="/src/assets/aboutme.png"
+        ,
+        bgdark={false}
+        inverted={false}
+      />
+
+      <ContentSection
+        titlemain="My  "
+        ,
+        titlesecondary="Experience"
+        ,
+        about=""
+        parasmall=""
+        ,
+        paras={[]}
+        parasabout={[
+          `Before joining Dell, Bertrand held <strong>leadership roles at VMware</strong>, including Senior Manager for the VMware Authorized Consultant Partner program in EMEA. In this capacity, he worked closely with VMware partners to enhance their professional services capabilities. He <strong>empowered hundreds of resellers</strong> to maximize the impact of their architect teams, enabling them to deliver innovative virtualization solutions to enterprise customers. As a Solution Architect, he focused on driving business outcomes through technology enablement and customer success. Prior to VMware, Bertrand's career focused on data center operations and infrastructure projects, including:
+
+    <ul style="list-style-type: disc; padding-left: 20px;">
+        <li style="color:white;font-size: 16px; font-weight: 400; line-height: 20px;">
+            <strong style="font-weight: 700;">Project Manager at Hewlett Packard Enterprise</strong>, where he specialized in data center automation systems and infrastructure build-outs for private and government clients.
+        </li>
+        <li style="color:white;font-size: 16px; font-weight: 400; line-height: 20px;">
+            <strong style="font-weight: 700;">Data Center Manager at Loudcloud</strong>, where he managed operations for two UK data centers supporting clients like Royal Mail, Nike, Blockbuster, and Adidas.
+        </li>
+        <li style="color:white;font-size: 16px; font-weight: 400; line-height: 20px;">
+            <strong style="font-weight: 700;">Operations Manager at Intel Corporation</strong>, overseeing web hosting data center operations for private clients, including FIFA and EGG.
+        </li>
+    </ul>`,
+
+          `Bertrand's foundation in IT started with tech support at Persoft, where he honed problem-solving skills and developed a strong <strong>customer-centric mindset</strong>. Throughout his career, Bertrand has been passionate about empowering teams, fostering innovation, and aligning technology strategies with business goals. Whether scaling operations, <strong>driving digital transformation</strong>, or building cutting-edge technical solutions, he thrives on delivering <strong>measurable results</strong> for customers and stakeholders. Let's connect and explore how Bertrand can help your Presales organization achieve its next level of success.`,
+        ]}
+        imgPath="/src/assets/experiences.jpeg"
+        ,
+        bgdark={true}
+        inverted={true}
+      />
+
+      <Consultation isServicesPage={true} />
+    </main>
+    <Footer />
+  </body>
+</html>
+
+<style></style>

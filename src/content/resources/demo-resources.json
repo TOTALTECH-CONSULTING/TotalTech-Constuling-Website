@@ -1,0 +1,25 @@
+{
+    "id":2,
+
+    "category": "Demo",
+    "secondarytitle": "Resources",
+    "items": [
+      {
+        "description": "Storylane allows users to create interactive demos, enabling businesses to showcase their products in a more engaging way.",
+        "logo": "/src/assets/resources5.png"
+      },
+      {
+        "description": "Saleo enhances live demos by adding interactive overlays, allowing you to display key information without interrupting the flow.",
+        "logo": "/src/assets/resources6.png"
+      },
+      {
+        "description": "Pepsales AI uses artificial intelligence to create personalized demo experiences by analyzing customer data and tailoring product showcases accordingly.",
+        "logo": "/src/assets/resources7.png"
+      },
+      {
+        "description": "demoboost also uses AI to enhance product demos by personalizing them to each prospect's needs and preferences.",
+        "logo": "/src/assets/resources8.png"
+      }
+    ]
+  }
+  

@@ -1,0 +1,218 @@
+<!-- ---
+interface Props {
+  title: string;
+  details: string;
+}
+
+const { title, details } = Astro.props as Props;
+---
+
+<div class="accordion">
+  <input type="checkbox" id={title} class="accordion__input hidden" />
+
+  <label for={title} class="accordion__button">
+    {title}
+    <span class="accordion__chevron">+</span>
+    <span class="accordion__chevron_opened">-</span>
+  </label>
+
+  <div class="accordion__content">
+    <p>{details}</p>
+  </div>
+</div>
+
+<style>
+  /* Accordion Container */
+  .accordion {
+    width: 100%;
+    overflow: hidden;
+    background: var(--primary);
+  }
+
+  /* Hide default checkbox */
+  .accordion__input {
+    display: none;
+  }
+
+  /* Accordion Button */
+  .accordion__button {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 90%;
+    padding: 12px;
+    font-size: 16px;
+    font-weight: 600;
+    background-color: var(--primary);
+    color: white;
+    cursor: pointer;
+    transition: background 0.3s ease;
+  }
+
+  .accordion__chevron {
+    color: white;
+  }
+
+  /* Chevron Icons */
+  .accordion__chevron_opened {
+    display: none;
+  }
+
+  /* Accordion Content */
+  .accordion__content {
+    max-height: 0;
+    overflow: hidden;
+    background: var(--primary);
+    transition: max-height 0.3s ease-in-out;
+    padding: 0 12px;
+    color: white;
+    border-top: 1px solid white;
+    width: 100%;
+  }
+
+  /* When checkbox is checked, show content */
+  .accordion__input:checked ~ .accordion__content {
+    max-height: 200px; /* Adjust based on content */
+    padding: 12px;
+  }
+
+  /* Toggle Chevron on Open */
+  .accordion__input:checked ~ .accordion__button .accordion__chevron {
+    display: none;
+  }
+
+  .accordion__input:checked ~ .accordion__button .accordion__chevron_opened {
+    display: inline;
+  }
+</style> -->
+
+
+---
+
+interface Props {
+  title: string;
+  details: string;
+}
+const { title, details } = Astro.props as Props;
+
+---
+
+
+<div class="accordion">
+  <input type="checkbox" id={title} class="accordion__input hidden" />
+
+  <label for={title} class="accordion__button">
+    {title}
+    <span class="accordion__chevron">+</span>
+    <span class="accordion__chevron_opened">-</span>
+  </label>
+
+  <div class="accordion__content">
+    <p>{details}</p>
+  </div>
+</div>
+
+<script>
+  // only keep one accordion open at a time
+  const accordions = document.querySelectorAll('.accordion__input');
+  accordions.forEach((accordion) => {
+    accordion.addEventListener('change', () => {
+      if ((accordion as HTMLInputElement).checked) {
+        accordions.forEach((a) => {
+          if (a !== accordion) {
+            (a as HTMLInputElement).checked = false;
+          }
+        });
+      }
+    });
+  });
+
+  // close all accordions when clicking outside
+  document.addEventListener('click', (e) => {
+    if (e.target && !(e.target as Element).closest('.accordion')) {
+      accordions.forEach((accordion) => {
+        (accordion as HTMLInputElement).checked = false;
+      });
+    }
+  });
+
+  // prevent closing when clicking on the accordion
+  const accordionButtons = document.querySelectorAll('.accordion__button');
+  accordionButtons.forEach((button) => {
+    button.addEventListener('click', (e) => {
+      e.stopPropagation();
+    });
+  });
+
+
+
+
+  
+</script>
+
+<style>
+  /* Accordion Container */
+.accordion {
+  width: 100%;
+  overflow: hidden;
+  background: var(--primary);
+}
+
+/* Hide default checkbox */
+.accordion__input {
+  display: none;
+}
+
+/* Accordion Button */
+.accordion__button {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 90%;
+  padding: 12px;
+  font-size: 16px;
+  font-weight: 600;
+  background-color: var(--primary);
+  color: white;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+
+.accordion__chevron {
+  color: white;
+}
+
+/* Chevron Icons */
+.accordion__chevron_opened {
+  display: none;
+}
+
+/* Accordion Content */
+.accordion__content {
+  max-height: 0;
+  overflow: hidden;
+  font-size: 1rem;
+  background: var(--primary);
+  transition: max-height 0.3s ease-in-out;
+  padding: 0 12px;
+  color: white;
+  border-top: 1px solid white;
+  width: clamp(0px, 848px, 80vw);
+}
+
+/* When checkbox is checked, show content */
+.accordion__input:checked ~ .accordion__content {
+  max-height: 400px; /* Adjust based on content */
+  padding: 12px;
+}
+
+/* Toggle Chevron on Open */
+.accordion__input:checked ~ .accordion__button .accordion__chevron {
+  display: none;
+}
+
+.accordion__input:checked ~ .accordion__button .accordion__chevron_opened {
+  display: inline;
+}
+
+</style>

@@ -1,0 +1,440 @@
+---
+import BaseHead from "../../components/BaseHead.astro";
+import Header from "../../components/Header.astro";
+import Footer from "../../components/Footer.astro";
+import { SITE_TITLE, SITE_DESCRIPTION } from "../../consts";
+import { getCollection } from "astro:content";
+import FormattedDate from "../../components/FormattedDate.astro";
+
+const posts = (await getCollection("blog")).sort(
+  (a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf(),
+);
+
+// from all posts if the image path is like public/image.png remove public and add /image.png
+posts.forEach((post) => {
+  post.data.heroImage = post.data.heroImage?.replace("/public", "");
+  });
+
+
+const postsPerPage = 10;
+const totalPages = Math.ceil(posts.length / postsPerPage);
+
+import { Image } from 'astro:assets';
+
+const images = import.meta.glob<{ default: ImageMetadata }>(
+  "/src/assets/*.{jpeg,jpg,png,gif,svg}"
+);
+---
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <BaseHead
+      title={`${SITE_TITLE} - Blogs`}
+      description={SITE_DESCRIPTION}
+    />    
+  </head>
+  <body>
+    <Header />
+    <main>
+      <div class="intro">
+        <h1>
+          Insights & Strategies for <br />
+          <span>Presales Success</span>
+        </h1>
+
+        <svg
+          width="643"
+          height="5"
+          viewBox="0 0 643 5"
+          fill="none"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <line
+            x1="0.497236"
+            y1="3.10108"
+            x2="642.495"
+            y2="1.50009"
+            stroke="white"
+            stroke-width="3"></line>
+        </svg>
+
+        <p>
+          Stay ahead in presales with expert insights, best practices, and
+          real-world strategies to boost your team's performance and drive
+          business success.
+        </p>
+      </div>
+      <section>
+        <ul>
+          {
+            posts.map((post) => (
+              <li>
+                <img
+                  class="displayImage"
+                  width={720}
+                  height={360}
+                  src={post.data.heroImage}
+                  alt=""
+                />
+                <h4 class="title">{post.data.title}</h4>
+                <div class="content">
+                  <div class="dateauthor">
+                    <p class="date">
+                      <img src="/date.png" alt="date" />
+                      <FormattedDate date={post.data.pubDate} />
+                    </p>
+
+                    <p>
+                      <img src="/author.png" alt="author" />
+                      {post.data.author}
+                    </p>
+                  </div>
+                  <svg
+                    width="268"
+                    height="4"
+                    viewBox="0 0 268 4"
+                    fill="none"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <line
+                      y1="1.73096"
+                      x2="268"
+                      y2="1.73096"
+                      stroke="#F0840E"
+                      stroke-width="3"
+                    />
+                  </svg>
+
+                  <p>{post.data.abstract}</p>
+                  <a class="btn" href={`/blog/${post.id}/`}>
+                    Learn More ➞
+                  </a>
+          </div>
+                            </li>
+                          ))
+                        }
+          </ul>
+        </ul>
+ <!-- Pagination Controls -->
+ <div class="pagination">
+  <button id="prevBtn" disabled>Previous</button>
+  <span id="pageIndicator">1 / {totalPages}</span>
+  <button id="nextBtn" ${totalPages <= 1 ? 'disabled' : ''}>Next</button>
+</div>
+
+      </section>
+    </main>
+    <Footer />
+  </body>
+</html>
+<script type="module">
+  let posts = [];
+  let currentPage = 1;
+  const postsPerPage = 10;
+  const postList = document.querySelector("ul");
+  const prevBtn = document.getElementById("prevBtn");
+  const nextBtn = document.getElementById("nextBtn");
+  const pageIndicator = document.getElementById("pageIndicator");
+
+  async function fetchPosts() {
+    try {
+      const response = await fetch('/api/blog.json');
+      posts = await response.json();
+
+      // Modify heroImage paths
+      posts.forEach((post) => {
+        post.data.heroImage = post.data.heroImage?.replace("/public", "");
+      });
+
+      renderPosts();
+    } catch (error) {
+      console.error("Error fetching posts:", error);
+    }
+  }
+
+  function renderPosts() {
+    if (!posts.length) return;
+
+    const totalPages = Math.ceil(posts.length / postsPerPage);
+    
+    if (postList) {
+      postList.innerHTML = "";
+    }
+
+    const startIndex = (currentPage - 1) * postsPerPage;
+    const endIndex = startIndex + postsPerPage;
+    const visiblePosts = posts.slice(startIndex, endIndex);
+
+    visiblePosts.forEach((post) => {
+      const postItem = document.createElement("li");
+      postItem.innerHTML = `
+        <img class="displayImage" width="720" height="360" src="${post.data.heroImage}" alt="">
+        <h4 class="title">${post.data.title}</h4>
+        <div class="content">
+          <div class="dateauthor">
+            <p class="date">
+              <img src="/date.png" alt="date" />
+              ${new Date(post.data.pubDate).toLocaleDateString()}
+            </p>
+            <p>
+              <img src="/author.png" alt="author" />
+              ${post.data.author}
+            </p>
+          </div>
+          <svg width="268" height="4" viewBox="0 0 268 4" fill="none">
+            <line y1="1.73096" x2="268" y2="1.73096" stroke="#F0840E" stroke-width="3" />
+          </svg>
+          <p>${post.data.abstract}</p>
+          <a class="btn" href="/blog/${post.id}/">Learn More ➞</a>
+        </div>
+      `;
+      postList.appendChild(postItem);
+    });
+
+    if (pageIndicator) {
+      pageIndicator.innerText = `${currentPage} / ${totalPages}`;
+    }
+
+    if (prevBtn) {
+      prevBtn.disabled = currentPage === 1;
+    }
+    if (nextBtn) {
+      nextBtn.disabled = currentPage === totalPages;
+    }
+  }
+
+  // Pagination Controls
+  if (prevBtn) {
+    prevBtn.addEventListener("click", () => {
+      if (currentPage > 1) {
+        currentPage--;
+        renderPosts();
+      }
+    });
+  }
+
+  if (nextBtn) {
+    nextBtn.addEventListener("click", () => {
+      if (currentPage < Math.ceil(posts.length / postsPerPage)) {
+        currentPage++;
+        renderPosts();
+      }
+    });
+  }
+
+  fetchPosts();
+
+  const styles =`      main {
+        /* margin: 2rem 0; */
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        margin-bottom: 2rem;
+      }
+
+      main .intro {
+        margin-bottom: 1rem;
+        width: 100%;
+        background-color: var(--primary);
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        padding: 4rem 0;
+      }
+
+      img {
+        border-radius: 0 !important;
+      }
+
+      main .intro h1 {
+        color: white;
+        text-align: center;
+        font-size: 64px;
+        margin: 0;
+        padding: 1rem;
+      }
+
+      main .intro h1 span {
+        color: var(--accent);
+      }
+      main .intro p {
+        color: white;
+        text-align: center;
+        font-size: 18px;
+        margin: 0;
+        padding: 1rem;
+        width: 50%;
+      }
+
+      section {
+        width: 100%;
+        max-width: 90%;
+      }
+      ul {
+        display: flex;
+        /* flex-wrap: wrap; */
+        flex-direction: column;
+        gap: 2rem;
+        list-style-type: none;
+        margin: 0;
+        padding: 0;
+        width: 100%;
+        justify-content: center;
+        align-items: center;
+      }
+      ul li {
+        width: calc(50% - 1rem);
+      }
+      ul li * {
+        text-decoration: none;
+        transition: 0.2s ease;
+      }
+
+      ul li img {
+        margin-bottom: 0.5rem;
+        /* border-radius: 12px; */
+      }
+      ul li a {
+        display: block;
+      }
+      .title {
+        margin: 0;
+        color: rgb(var(--black));
+        line-height: 1;
+      }
+      .date {
+        margin: 0;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        /* color: rgb(var(--gray)); */
+      }
+      ul li a:hover h4,
+      ul li a:hover .date {
+        /* color: rgb(var(--accent)); */
+      }
+      ul .displayImage:hover {
+        box-shadow: var(--box-shadow);
+      }
+
+      .intro svg {
+        width: 90%;
+      }
+
+      .dateauthor {
+        display: flex;
+        justify-content: flex-start;
+        align-items: center;
+        gap: 2rem;
+        color: black !important;
+      }
+
+      .dateauthor p {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: 5px;
+      }
+
+      .content {
+        display: flex;
+        flex-direction: column;
+        justify-content: start;
+        align-items: start;
+        width: 100%;
+      }
+
+      .content svg {
+        /* make svg to the lft of the parents div */
+      }
+
+      .content p {
+        font-size: 14px;
+        line-height: 14px;
+        color: black;
+      }
+
+      .btn {
+        background-color: var(--accent);
+        padding: 10px 20px;
+        border: none;
+        font-size: 20px;
+        font-weight: 500;
+        cursor: pointer;
+        box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+        transition: ease-in-out 0.3s;
+        color: black;
+      }
+
+      .btn:hover {
+        background-color: var(--accent);
+        transform: scale(1.01);
+        box-shadow: 0px 8px 8px rgba(0, 0, 0, 0.25);
+      }
+      .pagination {
+        display: flex;
+        justify-content: center;
+        gap: 10px;
+        margin-top: 20px;
+      }
+      .pagination button {
+        background-color: var(--accent);
+        padding: 10px 20px;
+        border: none;
+        font-size: 16px;
+        font-weight: 500;
+        cursor: pointer;
+        transition: ease-in-out 0.3s;
+      }
+      .pagination button:hover {
+        transform: scale(1.05);
+      }
+      .pagination button:disabled {
+        background-color: #ccc;
+        cursor: not-allowed;
+      }
+      @media (max-width: 720px) {
+        ul {
+          gap: 2em;
+        }
+        ul li {
+          width: 100%;
+          /* text-align: center; */
+        }
+        ul li:first-child {
+          margin-bottom: 0;
+        }
+        ul li:first-child .title {
+          font-size: 1.563em;
+        }
+
+        main .intro h1 {
+          font-size: 28px;
+        }
+
+        main .intro p {
+          font-size: 16px;
+          width: 80%;
+          padding: 0;
+        }
+
+        main .intro {
+          padding: 1rem 0;
+        }
+
+        .btn {
+          padding: 5px 15px;
+          font-size: 12px;
+        }
+      }
+`
+const styleSheet = document.createElement("style");
+styleSheet.type = "text/css";
+styleSheet.innerText = styles;
+document.head.appendChild(styleSheet);
+
+</script>

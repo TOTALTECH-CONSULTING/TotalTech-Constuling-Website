@@ -1,0 +1,272 @@
+---
+import { Image } from 'astro:assets';
+
+const images = import.meta.glob<{ default: ImageMetadata }>(
+  "/src/assets/*.{jpeg,jpg,png,gif,svg}"
+);
+
+
+---
+
+<section class="contact-container">
+  <main>
+    <div class="contact-info">
+      <h2>Get in touch</h2>
+      <p>Ready to take your presales team to the next level? Let's connect!</p>
+      <svg
+        width="401"
+        height="5"
+        viewBox="0 0 401 5"
+        fill="none"
+        xmlns="http://www.w3.org/2000/svg"
+      >
+        <line
+          x1="-0.00325236"
+          y1="2.90894"
+          x2="400.996"
+          y2="1.90894"
+          stroke="#123346"
+          stroke-width="3"></line>
+      </svg>
+
+      <div class="contact-details">
+        <div class="contact-method">
+          <Image src={images["/src/assets/email.png"]()} alt="email-icon" />
+          <p><strong>Our email</strong><br /> info@totaltech-consulting.com</p>
+        </div>
+        <div class="contact-method">
+          <Image src={images["/src/assets/phone.png"]()} alt="contact-icon" />
+
+          <p><strong>Call us</strong><br /> 165050680</p>
+        </div>
+        <div class="contact-method">
+          <Image src={images["/src/assets/location.png"]()} alt="location-icon" />
+
+          <p><strong>Find us</strong><br /> <a href="#">Open Google Maps</a></p>
+        </div>
+      </div>
+      <svg
+        width="401"
+        height="5"
+        viewBox="0 0 401 5"
+        fill="none"
+        xmlns="http://www.w3.org/2000/svg"
+      >
+        <line
+          x1="-0.00325236"
+          y1="2.90894"
+          x2="400.996"
+          y2="1.90894"
+          stroke="#123346"
+          stroke-width="3"></line>
+      </svg>
+
+      <div class="social-icons">
+        <a href="https://www.linkedin.com/company/totaltech-consulting-ltd" target="_blank"><Image src={images["/src/assets/social3.png"]()}  alt="linkedin" /></a>
+        <a href="https://www.youtube.com/@TotalTech-Consulting" target="_blank"><Image src={images["/src/assets/social4.svg"]()} style="box-sizing: border-box; padding: 3px" alt="youtube" /></a>
+      </div>
+    </div>
+    <div class="contact-form">
+      <form
+      data-netlify="true"
+      netlify-honeypot
+      name="contact"
+      method="POST"
+      action="/">
+        <div class="form-group">
+          <input type="text" name="firstname" placeholder="First name*" required />
+          <input type="text" name= "lastname"  placeholder="Last name*" required />
+        </div>
+        <div class="form-group">
+          <input type="email" name="email" placeholder="Email*" required />
+          <input type="tel" name="phone" placeholder="Phone" />
+        </div>
+        <textarea placeholder="Message*" name="message" required></textarea>
+        <button type="submit">Submit Now</button>
+      </form>
+    </div>
+  </main>
+</section>
+
+<style>
+  .contact-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    /* padding: 40px; */
+    /* max-width: 900px; */
+    margin: auto;
+    background: white;
+    width: 100%;
+  }
+
+  main {
+    display: flex;
+    justify-content: space-around;
+    width: 100%;
+    max-width: 1440px;
+    padding: 40px;
+    gap: 4rem;
+    flex-direction: row;
+  }
+
+  .contact-info {
+    width: 30%;
+  }
+
+  .contact-method {
+    display: flex;
+    gap: 10px;
+    align-items: center;
+    flex-direction: row;
+  }
+
+  p {
+    margin-bottom: 0px;
+    font-size: 16px;
+  }
+  .contact-info h2 {
+    /* margin-bottom: 10px; */
+  }
+
+  .contact-details p {
+    /* margin: 10px 0; */
+  }
+
+  .social-icons {
+    display: flex;
+    gap: 1rempx;
+    margin-top: 20px;
+  }
+  .social-icons a{
+    transition: ease-in-out 0.15s;
+  }
+  .social-icons a:hover{    
+    transform: scale(1.25);
+  }
+
+  .social-icons img {
+    /* width: 30px; */
+    height: 2.5rem;
+    width: auto;
+    margin-right: 10px;
+  }
+
+  form{
+    padding: 1rem;
+    box-sizing: border-box;
+  }
+
+  .contact-form {
+    width: 40%;
+    background: #f4f4f4;
+    padding: 1.5rem;
+    box-sizing: border-box;
+    border-radius: 8px;
+  }
+
+  .form-group {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 15px;
+    gap: 2rem;
+  }
+
+  .form-group input {
+    width: 48%;
+    padding: 10px;
+    border: none;
+    background-color: transparent;
+    border-bottom: 2px solid black;
+    color: black;
+  }
+
+  /* the input should not be blue on click */
+  input:focus {
+    outline: none;
+  }
+
+  input::placeholder {
+    color: black;
+  }
+
+  textarea::placeholder {
+    color: black;
+  }
+
+  textarea:focus {
+    outline: none;
+  }
+
+  textarea {
+    width: 100%;
+    height: 100px;
+    padding: 10px;
+    border: none;
+    background-color: transparent;
+    border-bottom: 2px solid black;
+    border-radius: 4px;
+    margin-bottom: 15px;
+    resize: vertical;
+  }
+
+  button {
+    background-color: var(--accent);
+    padding: 10px 25px;
+    border: none;
+    font-size: 20px;
+    font-weight: 500;
+    cursor: pointer;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    transition: ease-in-out 0.3s;
+  }
+
+  button:hover {
+    background-color: var(--accent);
+    transform: scale(1.01);
+    box-shadow: 0px 8px 8px rgba(0, 0, 0, 0.25);
+  }
+
+  a {
+    color: black;
+    text-decoration: none;
+  }
+
+  svg {
+    width: 100%;
+  }
+
+  @media (max-width: 768px) {
+    .contact-container {
+      flex-direction: column;
+    }
+    main {
+      flex-direction: column;
+      padding: 10px;
+      max-width: 90%;
+    }
+    .contact-info,
+    .contact-form {
+      width: 100%;
+      padding: 4px;
+    }
+    .form-group {
+      flex-direction: column;
+    }
+    .form-group input {
+      width: 95%;
+      margin-bottom: 10px;
+      padding: 5px;
+    }
+
+    textarea {
+      width: 95%;
+      padding: 5px;
+    }
+
+    .contact-method img {
+      width: 30px;
+      height: 30px;
+    }
+  }
+</style>

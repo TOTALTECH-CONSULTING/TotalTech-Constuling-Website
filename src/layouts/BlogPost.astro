@@ -1,0 +1,188 @@
+---
+import type { CollectionEntry } from "astro:content";
+import BaseHead from "../components/BaseHead.astro";
+import Header from "../components/Header.astro";
+import Footer from "../components/Footer.astro";
+import FormattedDate from "../components/FormattedDate.astro";
+
+type Props = CollectionEntry<"blog">["data"];
+
+const { title, description, pubDate, updatedDate, heroImage, author } =
+  Astro.props;
+
+import { Image } from 'astro:assets';
+
+const images = import.meta.glob<{ default: ImageMetadata }>(
+  "/src/assets/*.{jpeg,jpg,png,gif,svg}"
+);
+---
+
+<html lang="en">
+  <head>
+    <BaseHead title={title} description={description} />
+    <style>
+      main {
+        width: 100%;
+        max-width: 100%;
+        margin: 2rem 0;
+      }
+
+      .dateauthor {
+        display: flex;
+        justify-content: flex-start;
+        align-items: center;
+        gap: 2rem;
+        color: black !important;
+      }
+
+      .date {
+        /* margin: 0; */
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        /* color: rgb(var(--gray)); */
+      }
+      .dateauthor p {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: 5px;
+        margin-bottom: 1rem !important;
+      }
+
+      .content {
+        display: flex;
+        flex-direction: column;
+        justify-content: start;
+        align-items: baseline;
+        width: 100%;
+      }
+
+      .content svg {
+        /* make svg to the lft of the parents div */
+      }
+
+      .content p {
+        font-size: 14px;
+        line-height: 14px;
+        color: black;
+      }
+      article {
+        width: 100%;
+        max-width: 90%;
+        margin: 0 auto;
+      }
+      .hero-image {
+        width: 100%;
+      }
+      .hero-image img {
+        display: block;
+        /* margin: 0 auto; */
+        /* border-radius: 12px; */
+        box-shadow: var(--box-shadow);
+      }
+      .prose {
+        width: 1280px;
+        max-width: calc(100%);
+        /* margin: auto; */
+        /* padding: 1em; */
+        /* color: rgb(var(--gray-dark)); */
+      }
+      .title {
+        margin-bottom: 1rem;
+        margin-top: 1rem;
+        /* padding: 1em 0; */
+        /* text-align: center; */
+        /* line-height: 1; */
+      }
+      .title h1 {
+        /* margin: 0 0 0.5em 0; */
+      }
+      .date {
+        margin-bottom: 0.5em;
+        color: rgb(var(--gray));
+      }
+      .last-updated-on {
+        font-style: italic;
+      }
+
+      .afternote {
+        font-size: 18px;
+        font-weight: 700;
+        margin-top: 2rem;
+      }
+
+      .btns {
+        display: flex;
+        margin-top: 2rem;
+        gap: 1rem;
+      }
+
+      .btn {
+        padding: 0.75rem 2rem;
+        background-color: var(--accent);
+        color: black;
+        border: none;
+        font-size: 16px;
+        font-weight: 700;
+        transition: 0.2s ease;
+        text-decoration: none;
+      }
+
+      .btn1 {
+        background-color: var(--primary);
+        color: white;
+      }
+    </style>
+  </head>
+
+  <body>
+    <Header />
+    <main>
+      <article>
+        <div class="hero-image">
+          {heroImage && <img width={900} height={440} src={heroImage} alt="hero-image" />}
+        </div>
+        <div class="prose">
+          <div class="title">
+            <h1>{title}</h1>
+            <!-- <hr /> -->
+          </div>
+          <div class="content">
+            <div class="dateauthor">
+              <p class="date">
+                <img src="/date.png" alt="" />
+                <FormattedDate date={pubDate} />
+              </p>
+
+              <p><img src="/author.png" alt="" />{author}</p>
+            </div>
+            <svg
+              width="268"
+              height="4"
+              viewBox="0 0 268 4"
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <line
+                y1="1.73096"
+                x2="268"
+                y2="1.73096"
+                stroke="#F0840E"
+                stroke-width="3"></line>
+            </svg>
+          </div>
+          <slot />
+        </div>
+        <p class="afternote">
+          How are you optimizing your presales process? Let’s discuss!
+        </p>
+        <div class="btns">
+          <a href="/contact" class="btn">Contact</a>
+          <a href="/" class="btn btn1">Back</a>
+        </div>
+      </article>
+    </main>
+    <Footer />
+  </body>
+</html>

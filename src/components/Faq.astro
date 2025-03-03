@@ -1,0 +1,232 @@
+---
+import Accordion from "./Accordion.astro";
+
+import { Image } from 'astro:assets';
+
+const images = import.meta.glob<{ default: ImageMetadata }>(
+  "/src/assets/*.{jpeg,jpg,png,gif,svg}"
+);
+
+---
+
+<section class="section">
+  <!-- background image -->
+  <main class="main">
+    <!-- content -->
+    <div class="content">
+      <div class="success">
+        <svg
+          width="64"
+          height="3"
+          viewBox="0 0 64 3"
+          fill="none"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <path d="M0 1.5H64" stroke="#F0840E" stroke-width="3"></path>
+        </svg>
+        <p>FIND THE RIGHT ANSWER</p>
+        <svg
+          width="64"
+          height="3"
+          viewBox="0 0 64 3"
+          fill="none"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <path d="M0 1.5H64" stroke="#F0840E" stroke-width="3"></path>
+        </svg>
+      </div>
+      <h1 class="secondary">Frequently</h1>
+      <h1 class="elevate">Asked Questions</h1>
+    </div>
+    <div class="cards">
+      <Accordion
+        title="What is presales, and why is it important?"
+        details="Presales teams bridge the gap between sales and technical expertise, helping potential customers understand how a product or service fits their needs. A strong presales function improves win rates, shortens sales cycles, and increases customer satisfaction."
+      />
+      <Accordion
+        title="How can better presales leadership improve my team’s performance?"
+        details="Effective presales leadership enhances collaboration, refines processes, and empowers teams to communicate value more effectively—leading to higher conversion rates and stronger customer relationships."
+      />
+      <Accordion
+        title="What are the key challenges presales teams face?"
+        details="Common challenges include misalignment with sales, inefficient processes, inconsistent messaging, and lack of leadership development. We help you overcome these obstacles with tailored strategies and training."
+      />
+      <Accordion
+        title="How do you help companies optimize their presales processes?"
+        details="We analyze your current workflows, identify bottlenecks, and implement best practices to streamline operations. This leads to better efficiency, faster response times, and improved deal success rates."
+      />
+      <Accordion
+        title="Do you offer training for presales professionals and leaders?"
+        details="Yes! We provide training on leadership development, sales enablement, communication skills, and technical selling—customized to your organization’s needs."
+      />
+      <Accordion
+        title="Do you offer training for presales professionals and leader?"
+        details="We work with businesses across various industries, especially those with complex B2B sales cycles, SaaS companies, and technology-driven organizations."
+      />
+      <Accordion
+        title="How long does it take to see results from presales optimization?"
+        details="While results vary, most teams experience noticeable improvements in collaboration, efficiency, and conversion rates within the first few months."
+      />
+      <Accordion
+        title="What makes your consulting approach different?"
+        details="We take a hands-on, tailored approach—focusing on leadership, strategy, and execution. Our methods are practical, data-driven, and designed to deliver measurable impact."
+      />
+      <Accordion
+        title="How can I get started?"
+        details="Book a free consultation to discuss your presales challenges and explore how we can help you achieve better results."
+      />
+    </div>
+  </main>
+</section>
+
+<style>
+  img {
+    width: 100px;
+    height: 50px;
+  }
+
+  .section {
+    width: 100%;
+    display: flex;
+    padding: 4rem 0rem;
+  }
+
+  svg {
+    max-width: 90vw;
+  }
+  .main {
+    max-width: 1440px;
+    margin: auto;
+    width: 100%;
+    height: full;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 1rem;
+  }
+
+  .main h1 {
+    line-height: 50px;
+  }
+
+  .main .content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    /* margin: 1rem; */
+  }
+
+  .main .elevate {
+    color: var(--accent-secondray);
+    font-size: 56px;
+    font-weight: 700;
+  }
+
+  .main .secondary {
+    color: black;
+    font-size: 56px;
+    font-weight: 700;
+  }
+
+  .main p {
+    color: white;
+    font-size: 18px;
+    font-weight: 400;
+    line-height: 20px;
+  }
+
+  .main .success {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+  }
+
+  .main .success p {
+    color: black;
+    font-size: 14px;
+    white-space: nowrap;
+  }
+
+  .main .btn {
+    background-color: var(--accent);
+    padding: 15px 25px;
+    border: none;
+    font-size: 20px;
+    font-weight: 500;
+    cursor: pointer;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    transition: ease-in-out 0.3s;
+  }
+
+  .main .btn:hover {
+    background-color: var(--accent);
+    transform: scale(1.01);
+    box-shadow: 0px 8px 8px rgba(0, 0, 0, 0.25);
+  }
+
+  .cards {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+  }
+
+  @media (max-width: 720px) {
+    img {
+      display: none;
+    }
+
+    .section {
+      min-height: auto;
+      position: static !important;
+      flex-direction: column;
+    }
+
+    .main{
+      max-width: 90%;
+
+    }
+    .main .para {
+      width: 100%;
+    }
+
+    .main .content h1 {
+      font-size: 32px !important;
+    }
+
+    .main .content h1 span {
+      font-size: 32px !important;
+    }
+
+    .main h1 {
+      line-height: 30px;
+    }
+
+    .main .success {
+      gap: 10px;
+      font-size: 14px;
+    }
+
+    .main p {
+      font-size: 14px !important;
+      line-height: 20px;
+    }
+
+    .main .btn {
+      padding: 10px 20px;
+      font-size: 16px;
+    }
+
+    .cards {
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      gap: 20px;
+      margin-top: 20px;
+      padding-top: 1rem;
+    }
+  }
+</style>

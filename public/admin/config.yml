@@ -1,0 +1,56 @@
+backend:
+  name: git-gateway
+  branch: main
+
+media_folder: "public"
+
+publish_mode: editorial_workflow
+
+collections:
+  - name: "blog"
+    label: "Blog Posts"
+    folder: "src/content/blog"
+    create: true
+    slug: "{{slug}}"
+    fields:
+      - { label: "Title", name: "title", widget: "string" }
+      - { label: "Description", name: "description", widget: "string" }
+      - { label: "Publication Date", name: "pubDate", widget: "datetime" }
+      - { label: "Hero Image", name: "heroImage", widget: "image" }
+      - { label: "Author", name: "author", widget: "string" }
+      - { label: "Abstract", name: "abstract", widget: "text" }
+      - { label: "Body", name: "body", widget: "markdown" }
+
+
+  - name: "testimonials"
+    label: "Testimonials"
+    folder: "src/content/testimonials"
+    create: true
+    slug: "{{slug}}"
+    identifier_field: name
+    fields:
+      - { label: "Name", name: "name", widget: "string" }
+      - { label: "Position", name: "position", widget: "string" }
+      - { label: "Quote", name: "quote", widget: "text" }
+      - { label: "Image", name: "image", widget: "image" }
+
+
+  - name: "resources"
+    label: "Resources"
+    folder: "src/content/resources"
+    extension: "json"
+    format: "json"
+    create: true
+    slug: "{{slug}}"
+    fields:
+      # add a field to order the resources id integer
+      - { label: "ID", name: "id", widget: "number" }
+      - { label: "Category", name: "category", widget: "string" }
+      - { label: "Secondary Title", name: "secondarytitle", widget: "string" }
+      - label: "Items"
+        name: "items"
+        widget: "list"
+        fields:
+          - { label: "Description", name: "description", widget: "string" }
+          - { label: "Logo", name: "logo", widget: "image" }
+

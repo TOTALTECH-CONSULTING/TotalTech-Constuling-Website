@@ -1,0 +1,106 @@
+---
+import BaseHead from "../components/BaseHead.astro";
+import Header from "../components/Header.astro";
+import Footer from "../components/Footer.astro";
+import { SITE_TITLE, SITE_DESCRIPTION } from "../consts";
+import ContentSection from "../components/sectionServices.astro";
+import Consultation from "../components/Consultation.astro";
+
+import { Image } from 'astro:assets';
+
+const images = import.meta.glob<{ default: ImageMetadata }>(
+  "/src/assets/*.{jpeg,jpg,png,gif,svg}"
+);
+---
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <BaseHead
+      title={`${SITE_TITLE} - Services`}
+      description={SITE_DESCRIPTION}
+    />
+  </head>
+  <body>
+    <Header />
+    <main>
+      <ContentSection
+        about=""
+        titlemain="Coaching & "
+        ,
+        titlesecondary="Mentoring"
+        ,
+        id="Coaching"
+        ,
+        parasmall="Maximize the potential of your presales teams with Presales Coaching & Mentoring services designed to refine skills, elevate performance, and support long-term professional development. Whether you're an individual aiming to enhance your expertise or an organization looking to boost your team's effectiveness, our coaching and mentoring programs provide the targeted guidance and support needed to achieve success in presales roles. "
+        ,
+        paras={[
+          "Individual Coaching: Personalized sessions to refine technical skills, enhance customer engagement, and develop strategic sales approaches.",
+          "Group Coaching & Team Development: Customized team sessions to improve collaboration, technical expertise, and best practices for better communication and faster deal closures.",
+          "Facilitation for Events & Workshops: Expert-led workshops and training sessions designed for engagement, interactivity, and impactful learning.",
+          "Mentoring for Emerging Leaders: Guidance for aspiring presales leaders to build leadership skills, navigate organizational dynamics, and take on key responsibilities.",
+          "Skills Development for Winning Proposals & Presentations: Support for creating clear, compelling proposals, presentations, and demos that drive customer engagement.",
+          "Ongoing Support & Progress Tracking: Regular check-ins, feedback loops, and progress assessments to ensure long-term growth and success.",
+        ]}
+        parasabout={[]}
+        imgPath="/src/assets/servicesCoaching.png"
+        ,
+        bgdark={true}
+        inverted={false}
+      />
+
+      <ContentSection
+        about=""
+        titlemain="Advisory "
+        ,
+        titlesecondary="Mentoring"
+        ,
+        id="Mentoring"
+        ,
+        parasmall="Unlock the full potential of your technology investments with our expert Presales Advisory Services. We specialize in helping organizations transform their presales strategy, enhance customer engagement, and drive business growth. Our team of seasoned experts works closely with your sales and technical teams to align technology solutions with your customers' unique business challenges, ensuring a seamless path from prospect to solution delivery.  "
+        ,
+        paras={[
+          "Strategic Guidance: Develop and implement a presales strategy to accelerate revenue and enhance customer satisfaction with tailored technology solutions and value propositions.",
+          "Partner Enablement: Equip teams and partners with the skills to communicate complex technical solutions clearly through training and ongoing coaching.",
+          "Process Optimization: Identify bottlenecks and implement best practices to improve efficiency, shorten sales cycles, and boost win rates.",
+          "Cross-Functional Alignment: Ensure seamless collaboration between sales, marketing, and engineering to align technical teams with business objectives and customer needs.",
+        ]}
+        parasabout={[]}
+        imgPath="/src/assets/servicesAdvisory.png"
+        ,
+        bgdark={false}
+        inverted={true}
+      />
+
+      <ContentSection
+        about=""
+        titlemain="Fractional "
+        ,
+        titlesecondary="Leader"
+        ,
+        id="Leader"
+        ,
+        parasmall="Transform your presales operations with the expertise of a seasoned leader—without the full-time commitment. Our Fractional Presales Leader service provides you with strategic, hands-on leadership to drive presales excellence and accelerate business outcomes. Whether you need a temporary leader to manage a transition, scale your team, or bring fresh insights into your presales strategy, we offer flexible, tailored solutions to fit your business needs. "
+        ,
+        paras={[
+          "Strategic Leadership: Senior presales expertise to align strategy with business goals, optimize structure, and implement best practices for winning more deals.",
+          "Team Development & Enablement: Mentoring, coaching, and training to scale presales teams, ensuring engineers and solution architects deliver exceptional results.",
+          "Facilitation for Events & Workshops: Optimize presales operations by improving efficiency, streamlining workflows, and enhancing cross-functional collaboration.",
+          "Operational Excellence: Guidance for aspiring presales leaders to build leadership skills, navigate organizational dynamics, and take on key responsibilities.",
+          "Sales & Technical Alignment: Strengthen coordination between sales and technical teams to ensure seamless transitions from presales to delivery.",
+          "Executive Support: Provide strategic guidance as a Fractional Presales Leader, offering insights on industry trends, market shifts, and growth opportunities.",
+        ]}
+        parasabout={[]}
+        imgPath="/src/assets/leader.png"
+        ,
+        bgdark={true}
+        inverted={false}
+      />
+
+      <Consultation isServicesPage={true} />
+    </main>
+    <Footer />
+  </body>
+</html>
+
+<style></style>

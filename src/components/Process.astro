@@ -1,0 +1,195 @@
+---
+import Card from "./ProcessCard.astro";
+
+import { Image } from 'astro:assets';
+
+const images = import.meta.glob<{ default: ImageMetadata }>(
+  "/src/assets/*.{jpeg,jpg,png,gif,svg}"
+);
+
+---
+
+<section class="section">
+  <!-- background image -->
+  <main class="main">
+    <!-- content -->
+    <div class="content">
+      <h1 class="secondary">
+        Our
+        <span class="elevate"> Process</span>
+      </h1>
+    </div>
+    <svg
+      width="904"
+      height="3"
+      viewBox="0 0 904 3"
+      fill="none"
+      xmlns="http://www.w3.org/2000/svg"
+    >
+      <line y1="1.5" x2="904" y2="1.5" stroke="#123346" stroke-width="3"></line>
+    </svg>
+
+    <div class="cards">
+      <Card
+        title="Request Meeting"
+        description="Schedule a free consultation to discuss your presales challenges and goals."
+        imageSrc="/src/assets/process1.png"
+        altText="Team working together"
+      />
+      <Image src={images["/src/assets/arrow.png"]()} alt="arrow-pointer" />
+      <Card
+        title="Project Planning"
+        description="We create a tailored strategy with clear steps to optimize your presales approach."
+        imageSrc="/src/assets/process3.png"
+        altText="Team working together"
+      />
+      <Image src={images["/src/assets/arrow.png"]()} alt="arrow-pointer" />
+      <Card
+        title="Execution"
+        description="We implement the plan through coaching, strategy execution, and continuous improvements."
+        imageSrc="/src/assets/process2.png"
+        altText="Team working together"
+      />
+    </div>
+  </main>
+</section>
+
+<style>
+  img {
+    width: 100px;
+    height: 50px;
+  }
+
+  .section {
+    width: 100%;
+    display: flex;
+    padding: 4rem 0rem;
+  }
+
+  svg {
+    max-width: 90vw;
+  }
+  .main {
+    max-width: 1440px;
+    margin: auto;
+    width: 100%;
+    height: full;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .main h1 {
+    line-height: 50px;
+  }
+
+  .main .elevate {
+    color: var(--accent-secondray);
+    font-size: 56px;
+    font-weight: 700;
+  }
+
+  .main .secondary {
+    color: black;
+    font-size: 56px;
+    font-weight: 700;
+  }
+
+  .main p {
+    color: white;
+    font-size: 18px;
+    font-weight: 400;
+    width: 45%;
+    line-height: 20px;
+  }
+
+  .main .success {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+  }
+
+  .main .btn {
+    background-color: var(--accent);
+    padding: 15px 25px;
+    border: none;
+    font-size: 20px;
+    font-weight: 500;
+    cursor: pointer;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    transition: ease-in-out 0.3s;
+  }
+
+  .main .btn:hover {
+    background-color: var(--accent);
+    transform: scale(1.01);
+    box-shadow: 0px 8px 8px rgba(0, 0, 0, 0.25);
+  }
+
+  .cards {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    gap: 20px;
+    margin-top: 20px;
+    padding-top: 3rem;
+    padding-left: 1rem;
+    padding-right: 1rem;
+  }
+
+  @media (max-width: 1023px) {
+    img {
+      display: none;
+    }
+
+    .main{
+      max-width: 90%;
+    }
+    .section {
+      min-height: auto;
+      position: static !important;
+      flex-direction: column;
+    }
+
+    .main .para {
+      width: 100%;
+    }
+
+    .main .content h1 {
+      font-size: 32px !important;
+    }
+
+    .main .content h1 span {
+      font-size: 32px !important;
+    }
+
+    .main h1 {
+      line-height: 30px;
+    }
+
+    .main .success {
+      gap: 10px;
+      font-size: 14px;
+    }
+
+    .main p {
+      font-size: 14px !important;
+      line-height: 20px;
+    }
+
+    .main .btn {
+      padding: 10px 20px;
+      font-size: 16px;
+    }
+
+    .cards {
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      gap: 20px;
+      margin-top: 20px;
+      padding-top: 1rem;
+    }
+  }
+</style>

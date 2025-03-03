@@ -1,0 +1,297 @@
+---
+import { Image } from 'astro:assets';
+
+const images = import.meta.glob<{ default: ImageMetadata }>(
+  "/src/assets/*.{jpeg,jpg,png,gif,svg}"
+);
+
+
+const today = new Date();
+---
+
+<footer>
+  <div class="footer-container">
+    <div class="footer-main">
+      <div class="footer-sub">
+        <Image src={images["/src/assets/logo.png"]()} alt="logo" />
+        <p>
+          Empowering presales organizations with expert leadership and process
+          optimization.
+        </p>
+      </div>
+    </div>
+
+    <div class="footer-secondary">
+      <div>
+        <h1>Pages</h1>
+        <ol>
+          <li> <a href="/" aria-label="Link to home page">Home</a> </li>
+          <li> <a href="/services" aria-label="Link to services page">Services</a> </li>
+          <li> <a href="/blog" aria-label="link to blog page">Blog</a> </li>
+          <li> <a href="/resources" aria-label="link to resources page">Resources</a> </li>
+          <li> <a href="/about" aria-label="link to about page">About Me</a> </li>
+          <li> <a href="/contact" aria-label="link to contact page">Contact</a> </li>
+        </ol>
+      </div>
+
+      <div>
+        <h1>Services</h1>
+        <ol>
+          <li> <a href="/services" aria-label="Link to coaching services">Coaching and Mentoring</a> </li>
+          <li> <a href="/services#Mentoring" aria-label="Link to mentoring services"><li>Advisory Services</a> </li>
+          <li> <a href="/services#Leader" aria-label="link to leadership services"><li>Fractional Leader</a> </li>
+        </ol>
+      </div>
+
+      <div>
+        <h1>Contact</h1>
+        <a href="/contact" aria-label="link to contact page"><button class="btn">Get in touch</button></a>
+      </div>
+    </div>
+  </div>
+  <div class="socials">
+    <div class="left">
+      <div>
+        <h1>Our Email</h1>
+        <p>info@totaltech-consulting.com</p>
+      </div>
+      <div>
+        <h1>Call us</h1>
+        <p>16050680</p>
+      </div>
+      <div>
+        <h1>Find us</h1>
+        <p>71-75 Shelton Street, London WC2H 9JQ, United Kingdom</p>
+      </div>
+    </div>
+    <div class="right">
+      <h1>Follow us</h1>
+      <div class="social-icons">
+        <!-- <img src="/social1.png" alt="facebook" /> -->
+        <!-- <img src="/social2.png" alt="twitter" /> -->
+        <a href="https://www.linkedin.com/company/totaltech-consulting-ltd" target="_blank" aria-label="link to company linkedin page"><Image src={images["/src/assets/social3.png"]()} alt="linkedin" /></a>
+        <a href="https://www.youtube.com/@TotalTech-Consulting" target="_blank" aria-label="link to company youtube channel"> <Image src={images["/src/assets/social4.svg"]()} style="box-sizing: border-box; padding: 3px" alt="youtube" /></a>
+      </div>
+    </div>
+  </div>
+  <div class="copyrights"><h1>Designed by <a href="https://ventori-solutions.com/" target="_blank" aria-label="link to web design company ventori solutions page">Ventori Solutions</a></h1><p>
+    Copyright &copy; {today.getFullYear()} TotalTech Consulting Ltd All rights reserved.
+  </p>
+</div>
+</footer>
+
+<style>
+  /* Footer container */
+  footer {
+    padding: 2em 1.5em;
+    background: var(--primary);
+    color: white;
+    font-size: 16px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+
+  /* Main footer grid */
+  .footer-container {
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+    gap: 2rem;
+    max-width: 1440px;
+  }
+
+  /* Logo and description */
+  .footer-sub {
+    display: grid;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 1rem;
+    /* set colum span */
+    grid-column: span 1;
+  }
+
+  .footer-main {
+    grid-column: span 4;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .footer-secondary {
+    grid-column: span 3;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  /* Footer logo */
+  .footer-sub img {
+    width: 180px;
+    height: auto;
+  }
+
+  /* Footer section headers */
+  h1 {
+    color: white;
+    font-size: 18px;
+    font-weight: 600;
+    margin-bottom: 10px;
+  }
+
+  /* Footer list styles */
+  ol {
+    padding: 0;
+    list-style: none;
+  }
+
+  ol li {
+    font-size: 16px;
+    font-weight: 400;
+    cursor: pointer;
+    transition: color 0.3s ease;
+  }
+
+  ol a{
+    text-decoration: none;
+    color: var(--font-secondary);
+  }ol a:hover{
+    text-decoration: underline;
+  }
+
+  .footer-col ol li:hover {
+    color: var(--accent);
+  }
+
+  /* Button */
+  .btn {
+    background-color: var(--accent);
+    padding: 12px 20px;
+    border: none;
+    font-size: 16px;
+    font-weight: 500;
+    cursor: pointer;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    transition: all 0.3s ease-in-out;
+  }
+
+  .btn:hover {
+    transform: scale(1.05);
+    box-shadow: 0px 6px 6px rgba(0, 0, 0, 0.2);
+  }
+
+  .copyrights {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: baseline;
+    width: 100%;
+    gap: 20px;
+    max-width:1440px;
+    border-top: 1px solid #ffffff;
+  }
+
+  .copyrights h1 {
+    font-size: 16px;
+    font-weight: bolder;
+  }
+
+  .copyrights p {
+    font-size: 14px;
+    font-weight: 400;
+  }
+
+  .socials {
+    margin-top: 2rem;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    max-width: 1440px;
+  }
+
+  .socials .left {
+    display: flex;
+    flex: row;
+    gap: 30px;
+  }
+
+  .socials .right {
+    display: flex;
+    flex: row;
+    gap: 30px;
+  }
+
+  .social-icons{
+    display: inline-flex;
+    gap: 0.5rem;
+  }
+  .social-icons a{
+    transition: ease-in-out 0.15s;
+  }
+  .social-icons a:hover{    
+    transform: scale(1.25);
+  }
+
+  .social-icons img {
+    width: 30px;
+    height: auto;
+    cursor: pointer;
+    background-color: white;
+    border-radius: 360px;
+  }
+
+  /* Responsive Design */
+  @media (max-width: 768px) {
+    .footer-container {
+      grid-template-columns: 1fr;
+      max-width: 90%;
+    }
+
+    .footer-main {
+      grid-template-columns: 1fr;
+    }
+
+    .footer-sub {
+      grid-column: span 1;
+    }
+
+    .footer-secondary {
+      grid-column: span 1;
+      grid-template-columns: 1fr;
+    }
+    .footer-col {
+      grid-column: span 1;
+    }
+
+    .footer-col ol li {
+      font-size: 14px;
+    }
+
+    .footer-col h1 {
+      font-size: 16px;
+    }
+    .btn {
+      width: 100%;
+    }
+
+    .footer-sub img {
+      width: 140px;
+    }
+
+    .socials {
+      flex-direction: column;
+      max-width: 90%;
+    }
+    .socials .left {
+      flex-direction: column;
+      gap: 5px;
+    }
+
+    .copyrights {
+      flex-direction: column;
+      gap: 10px;
+      align-items: start;
+      max-width: 90%;
+    }
+  }
+</style>
