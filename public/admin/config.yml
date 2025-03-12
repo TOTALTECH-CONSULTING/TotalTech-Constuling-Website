@@ -53,3 +53,19 @@ collections:
           - { label: "Description", name: "description", widget: "string" }
           - { label: "Logo", name: "logo", widget: "image" }
 
+
+  - name: "faqs"
+    label: "FAQs"
+    folder: "src/content/faqs"
+    extension: "json"
+    format: "json"
+    create: true
+    slug: "{{slug}}"
+    fields:
+      - label: "Questions"
+        name: "questions"
+        widget: "list"
+        fields:
+          - { label: "Question", name: "question", widget: "string" }
+          - { label: "Answer", name: "answer", widget: "string" }
+
