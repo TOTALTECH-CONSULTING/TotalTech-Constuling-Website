@@ -43,4 +43,18 @@ const resources = defineCollection({
   }),
 });
 
-export const collections = { blog , testimonials, resources };
+
+const faqs = defineCollection({
+  loader: glob({ base: "./src/content/faqs", pattern: "**/*.json" }),
+  schema: z.object({
+    title: z.string(),
+    questions: z.array(
+      z.object({
+        question: z.string(),
+        answer: z.string(),
+      })
+    ),
+  }),
+});
+
+export const collections = { blog , testimonials, resources, faqs };

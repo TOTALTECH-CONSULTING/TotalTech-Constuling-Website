@@ -1,5 +1,6 @@
 ---
 import Accordion from "./Accordion.astro";
+import { getCollection } from "astro:content";
 
 import { Image } from 'astro:assets';
 
@@ -7,6 +8,10 @@ const images = import.meta.glob<{ default: ImageMetadata }>(
   "/src/assets/*.{jpeg,jpg,png,gif,svg}"
 );
 
+
+const faqs_all = (await getCollection("faqs"));
+
+const faqs = faqs_all[0].data.questions;
 ---
 
 <section class="section">
@@ -39,7 +44,10 @@ const images = import.meta.glob<{ default: ImageMetadata }>(
       <h1 class="elevate">Asked Questions</h1>
     </div>
     <div class="cards">
-      <Accordion
+      {faqs.map((faq) => (
+        <Accordion title={faq.question} details={faq.answer} />
+      ))}
+      <!-- <Accordion
         title="What is presales, and why is it important?"
         details="Presales teams bridge the gap between sales and technical expertise, helping potential customers understand how a product or service fits their needs. A strong presales function improves win rates, shortens sales cycles, and increases customer satisfaction."
       />
@@ -74,7 +82,7 @@ const images = import.meta.glob<{ default: ImageMetadata }>(
       <Accordion
         title="How can I get started?"
         details="Book a free consultation to discuss your presales challenges and explore how we can help you achieve better results."
-      />
+      /> -->
     </div>
   </main>
 </section>
