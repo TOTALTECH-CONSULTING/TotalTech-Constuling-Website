@@ -1,6 +1,5 @@
 ---
 title: "Third post"
-description: "Lorem ipsum dolor sit amet"
 pubDate: "Jul 22 2022"
 heroImage: "/blog-placeholder-1.jpg"
 author: "Bertrand Lalanne"

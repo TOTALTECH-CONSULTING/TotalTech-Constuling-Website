@@ -1,6 +1,5 @@
 ---
 title: Final Try
-description: Final Try
 pubDate: 2025-02-22T12:19:00.000Z
 heroImage: /public/blog-placeholder-4.jpg
 author: Usman

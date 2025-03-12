@@ -1,8 +1,5 @@
 ---
 title: "Fine-Tuning DeepSeek-R1 on Consumer Hardware: A Step-by-Step Guide"
-description: In this blog post, we will walk through a step-by-step guide to
-  fine-tune DeepSeek-R1 using LoRA (Low-Rank Adaptation) and Unsloth on
-  consumer-grade GPUs. 💻📈🔥
 pubDate: 2025-01-29T00:10:00.000Z
 heroImage: https://miro.medium.com/v2/resize:fit:1400/format:webp/1*RBhiPjTYhgWTA3_ClyIFgQ.png
 author: Pankaj

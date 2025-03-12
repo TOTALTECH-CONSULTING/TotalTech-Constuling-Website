@@ -14,7 +14,6 @@ collections:
     slug: "{{slug}}"
     fields:
       - { label: "Title", name: "title", widget: "string" }
-      - { label: "Description", name: "description", widget: "string" }
       - { label: "Publication Date", name: "pubDate", widget: "datetime" }
       - { label: "Hero Image", name: "heroImage", widget: "image" }
       - { label: "Author", name: "author", widget: "string" }
@@ -29,8 +28,8 @@ collections:
     slug: "{{slug}}"
     identifier_field: name
     fields:
-      - { label: "Name", name: "name", widget: "string" }
-      - { label: "Position", name: "position", widget: "string" }
+      - { label: "Title", name: "name", widget: "string" }
+      - { label: "CustomerName", name: "position", widget: "string" }
       - { label: "Quote", name: "quote", widget: "text" }
       - { label: "Image", name: "image", widget: "image" }
 

@@ -1,6 +1,5 @@
 ---
 title: This Blog has been added through Decap UI
-description: "Decap is the netlify's own cms. "
 pubDate: 2025-02-21T23:59:00.000Z
 heroImage: /rise.jpg
 author: Usman
