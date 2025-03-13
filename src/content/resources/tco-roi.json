@@ -6,11 +6,11 @@
     "items": [
       {
         "description": "A presales tool for value-based selling. Mediafly helps presales teams demonstrate ROI and TCO (Total Cost of Ownership) in a compelling and easy-to-understand manner.",
-        "logo": "/src/assets/resources9.png"
+        "logo": "/public/resources9.png"
       },
       {
         "description": "Valuecore specializes in helping B2B sales teams demonstrate the total cost of ownership (TCO) and return on investment (ROI) through interactive and data-driven tools.",
-        "logo": "/src/assets/resources10.png"
+        "logo": "/public/resources10.png"
       }
     ]
   }
