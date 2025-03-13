@@ -1,6 +1,6 @@
 ---
 name: Strategic vision and pragmatism
-position: Marc Royer Head of  UDS Sales @ Dell France
+position: Marc Royer  - Head of  UDS Sales @ Dell France
 quote: I was fortunate to be supported by Bertrand throughout my career, from
   presales manager to leadership roles, where his experience, strategic vision,
   and pragmatism accelerated my growth both professionally and personally.
