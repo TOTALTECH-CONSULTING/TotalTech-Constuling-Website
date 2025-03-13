@@ -44,7 +44,7 @@ export default function Slider({ testimonials }) {
             <div className="text-warpper-testiomional">
               <div>
                 <h1 className="investor-name">{testimonial.data.name}</h1>
-                <h1 className="quote">"{testimonial.data.quote}"</h1>
+                <h1 className="quote">{testimonial.data.quote}</h1>
               </div>
               <div className="testimonial-info">
                 <svg
