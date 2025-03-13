@@ -6,12 +6,12 @@
     "items": [
       {
         "description": "Gong uses conversation intelligence to analyze sales calls, providing insights into customer interactions.",
-        "logo": "/src/assets/resources17.png"
+        "logo": "/public/resources17.png"
 
       },
       {
         "description": "Revenue Grid enhances pipeline visibility by detecting deal risks and providing actionable insights into sales opportunities.",
-        "logo": "/src/assets/resources18.png"
+        "logo": "/public/resources18.png"
       }
     ]
   }

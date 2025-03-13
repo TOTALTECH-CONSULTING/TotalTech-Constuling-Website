@@ -6,11 +6,11 @@
     "items": [
       {
         "description": "Mindtickle offers sales readiness training, helping teams improve their skills and performance.",
-        "logo": "/src/assets/resources15.png"
+        "logo": "/public/resources15.png"
       },
       {
         "description": "GTMBuddy focuses on just-in-time enablement, delivering the right training and resources to sales teams exactly when they need it.",
-        "logo": "/src/assets/resources16.png"
+        "logo": "/public/resources16.png"
       }
     ]
   }

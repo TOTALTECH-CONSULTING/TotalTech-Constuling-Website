@@ -5,19 +5,19 @@
     "items": [
       {
         "description": "A global community that offers webinars, certifications, and a range of resources to help presales professionals thrive.",
-        "logo": "/src/assets/resources1.png"
+        "logo": "/public/resources1.png"
       },
       {
         "description": "A comprehensive resource designed to support presales professionals in mastering the art and science of technical sales.",
-        "logo": "/src/assets/resources2.png"
+        "logo": "/public/resources2.png"
       },
       {
         "description": "The Presales Coach provides specialized training, coaching, and mentoring services for presales professionals.",
-        "logo": "/src/assets/resources3.png"
+        "logo": "/public/resources3.png"
       },
       {
         "description": "The PreSales Academy offers a set of resources, training materials, and tools that focus specifically on developing the skills of presales professionals.",
-        "logo": "/src/assets/resources4.png"
+        "logo": "/public/resources4.png"
       }
     ]
   }

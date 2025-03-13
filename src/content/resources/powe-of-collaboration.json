@@ -6,11 +6,11 @@
     "items": [
       {
         "description": "Miro is a powerful online collaboration platform that allows presales teams to create visual diagrams, roadmaps, and solution maps for customers.",
-        "logo": "/src/assets/resources13.png"
+        "logo": "/public/resources13.png"
       },
       {
         "description": "Stormboard is a versatile collaboration platform that enhances teamwork through its digital whiteboard capabilities.",
-        "logo": "/src/assets/resources14.png"
+        "logo": "/public/resources14.png"
 
       }
     ]

@@ -6,11 +6,11 @@
     "items": [
       {
         "description": "PreSkale is a platform designed to optimize the efficiency of presales teams, offering tools to manage resources, track evaluation progress, and enhance collaboration across product, sales, and technical teams.",
-        "logo": "/src/assets/resources19.png"
+        "logo": "/public/resources19.png"
       },
       {
         "description": "Vivun is an AI-powered platform designed to optimize the presales process, particularly for sales engineering teams.",
-        "logo": "/src/assets/resources20.png"
+        "logo": "/public/resources20.png"
 
       }
     ]
