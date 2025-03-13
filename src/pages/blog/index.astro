@@ -15,6 +15,8 @@ posts.forEach((post) => {
   post.data.heroImage = post.data.heroImage?.replace("/public", "");
   });
 
+// sort posts
+
 
 const postsPerPage = 10;
 const totalPages = Math.ceil(posts.length / postsPerPage);
@@ -146,6 +148,9 @@ const images = import.meta.glob<{ default: ImageMetadata }>(
       posts.forEach((post) => {
         post.data.heroImage = post.data.heroImage?.replace("/public", "");
       });
+
+      // sort posts by pubDate
+      posts.sort((a, b) => b.data.pubDate.localeCompare(a.data.pubDate));
 
       renderPosts();
     } catch (error) {

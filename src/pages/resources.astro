@@ -80,7 +80,9 @@ const images = import.meta.glob<{ default: ImageMetadata }>(
                 <div class="grid">
                   {category.data.items.map((item, idx) => (
                     <div class="card">
+                      <a href={item.link} target="_blank" >
                       <img src={item.logo} alt="resource" />
+                      </a>
                       <div class="card-description">{item.description}</div>
                     </div>
                   ))}

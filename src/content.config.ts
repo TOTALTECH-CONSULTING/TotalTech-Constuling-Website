@@ -37,6 +37,7 @@ const resources = defineCollection({
       z.object({
         description: z.string(),
         logo: z.string(),
+        link: z.string(),
       })
     ),
   }),
