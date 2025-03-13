@@ -22,6 +22,10 @@
     {
       "description": "this is a demo resource",
       "logo": "/public/blog-placeholder-1.jpg"
+    },
+    {
+      "description": "another one",
+      "logo": "/public/blog-placeholder-about.jpg"
     }
   ]
 }
