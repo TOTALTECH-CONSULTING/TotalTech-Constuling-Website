@@ -7,5 +7,5 @@ quote: I was fortunate to be supported by Bertrand throughout my career, from
   Today, with TotalTech Consulting Ltd, he helps companies maximize team impact
   and strategy, and I highly recommend him as a mentor, coach, or presales
   consulting expert for anyone looking to succeed.
-image: /public/marcroyer.jpg
+image: /public/royer.jpeg
 ---
