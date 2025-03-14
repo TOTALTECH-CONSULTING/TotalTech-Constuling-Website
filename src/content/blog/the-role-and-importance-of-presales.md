@@ -6,8 +6,8 @@ author: Bertrand Lalanne
 abstract: "The Presales function is essential for any technology selling
   organisation.  It acts as the bridge connecting various departments: sales,
   product management, engineering, marketing, technical support, operations,
-  senior leadership, and partners. In this article, I will why Presales is
-  important, and how it provides that bridging function. "
+  senior leadership, and partners. In this article, I will explain why Presales
+  is important, and how it provides that bridging function. "
 ---
 *Reading time 7 minutes*
 
@@ -19,14 +19,14 @@ Sales. Additionally, I will refer to an *SE (Sales Engineer)* as a professional 
 within the Presales function, which includes titles like Presales Consultant,
 Solution Consultant, Technical Consultant, and Technical Seller.
 
- The Presales function is essential for any organization that sells technology. While the
+The Presales function is essential for any organization that sells technology. While the
 technology itself can vary, its complexity dictates the need for SEs. For basic
 products or services, post-sales technical support may suffice, and in smaller
 companies, this role may even overlap with engineering. However, as technology
 grows more complex and valuable, the need for a dedicated SE team becomes more
 apparent.
 
- The Presales function acts as the bridge connecting various departments: sales, product
+The Presales function acts as the bridge connecting various departments: sales, product
 management, engineering, marketing, technical support, operations, senior
 leadership, and partners. Below, I outline how SEs work across these teams:
 
@@ -75,8 +75,6 @@ leadership, and partners. Below, I outline how SEs work across these teams:
 In summary, Presales serves a critical role in aligning technical and business objectives, ensuring successful sales and customer satisfaction.
 
 [And it's not just me saying it :)](https://www.mckinsey.com/capabilities/growth-marketing-and-sales/our-insights/to-improve-sales-pay-more-attention-to-presales#/)    *(Requires sign in)*
-
-
 
 ### The Challenge of Leading an SE Team
 
@@ -150,8 +148,6 @@ While SEs are critical for business success, leading an SE team comes with its o
 
 With over 25 years of experience in Presales leadership, I offer a variety of services to address these challenges:
 
-
-
 #### SE Coaching & Mentoring:
 
 **Individual Coaching**: One-on-one sessions focused on refining technical skills, improving customer engagement, and developing a more strategic approach to sales.
@@ -160,11 +156,9 @@ With over 25 years of experience in Presales leadership, I offer a variety of se
 
 **Event Facilitation:** Expert facilitation for workshops, training events, and team-building sessions.
 
- **Mentoring for Emerging Leaders:** Guiding aspiring SE leaders to build leadership capabilities and take on greater responsibilities.
+**Mentoring for Emerging Leaders:** Guiding aspiring SE leaders to build leadership capabilities and take on greater responsibilities.
 
 **Skills Development:** Helping teams craft customer-facing proposals, presentations, and demos that create strong customer relationships.
-
-	
 
 #### SE Advisory Services:
 
@@ -176,8 +170,6 @@ With over 25 years of experience in Presales leadership, I offer a variety of se
 
 **Cross-Functional Alignment:** Ensuring technical teams align with business goals and customer needs at every stage of the sales process.
 
-	
-
 #### Fractional SE Leadership:
 
 **Strategic Leadership:** Providing senior leadership to align your SE strategy with your business goals and improve team efficiency.
@@ -188,8 +180,6 @@ With over 25 years of experience in Presales leadership, I offer a variety of se
 
 **Sales & Technical Alignment:** Ensuring alignment between sales and technical teams for smooth customer outcomes.
 
-	
-
 [Take a look at this brief video](https://www.youtube.com/watch?v=xu7SkZPhhFQ)
 
 Get in touch: 
@@ -197,8 +187,6 @@ Get in touch:
 info@totaltech-consulting.com
 
 <https://totaltech-consulting.com/contact>
-
-
 
 [Subscribe to my Youtube Channel](https://www.youtube.com/@TotalTech-Consulting)
 
