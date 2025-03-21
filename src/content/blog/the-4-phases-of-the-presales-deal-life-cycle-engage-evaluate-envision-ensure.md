@@ -2,7 +2,7 @@
 title: "The 4 Phases of the Presales Deal Life Cycle: Engage, Evaluate,
   Envision, Ensure"
 pubDate: 2025-03-20T10:22:00.000Z
-heroImage: https://www.youtube.com/watch?v=xu7SkZPhhFQ
+heroImage: /public/ai-generated-8878451_1280.jpg
 author: Bertrand Lalanne
 abstract: In today’s competitive B2B environment, SE's are critical in shaping
   the path from lead to a closed deal. A well-managed presales cycle ensures not
