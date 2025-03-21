@@ -1,9 +1,13 @@
 ---
 import type { CollectionEntry } from "astro:content";
-import BaseHead from "../components/BaseHead.astro";
 import Header from "../components/Header.astro";
 import Footer from "../components/Footer.astro";
 import FormattedDate from "../components/FormattedDate.astro";
+
+import "../styles/global.css";
+import { SITE_TITLE } from "../consts";
+const canonicalURL = new URL(Astro.url.pathname, Astro.site);
+
 
 type Props = CollectionEntry<"blog">["data"];
 
@@ -19,8 +23,75 @@ const images = import.meta.glob<{ default: ImageMetadata }>(
 
 <html lang="en">
   <head>
-    <BaseHead title={title} description={abstract} image={heroImage} />
-     
+    <!-- BaseHead Section -->
+    
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <link rel="sitemap" href="/sitemap-index.xml" />
+    <link
+      rel="alternate"
+      type="application/rss+xml"
+      title={SITE_TITLE}
+      href={new URL("rss.xml", Astro.site)}
+    />
+    <meta name="generator" content={Astro.generator} />
+
+    <!-- Font preloads -->
+    <link
+      rel="preload"
+      href="/fonts/atkinson-regular.woff"
+      as="font"
+      type="font/woff"
+      crossorigin
+    />
+    <link
+      rel="preload"
+      href="/fonts/atkinson-bold.woff"
+      as="font"
+      type="font/woff"
+      crossorigin
+    />
+
+    <!-- Canonical URL -->
+    <link rel="canonical" href={canonicalURL} />
+
+    <!-- Primary Meta Tags -->
+    <title>{title}</title>
+    <meta name="title" content={title} />
+    <meta name="description" content={abstract} />
+
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content={Astro.url} />
+    <meta property="og:title" content={title} />
+    <meta property="og:description" content={abstract} />
+    <meta property="og:image" content={heroImage} />
+
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image" />
+    <meta property="twitter:url" content={Astro.url} />
+    <meta property="twitter:title" content={title} />
+    <meta property="twitter:description" content={abstract} />
+    <meta property="twitter:image" content={heroImage} />
+
+
+  
+      <!-- Open Graph / Facebook --
+      <meta property="og:title" content={title} />
+      <meta property="og:description" content={abstract} />
+      <meta property="og:image" content={heroImage} />
+      <meta property="og:type" content="article" />
+      <meta property="og:url" content={Astro.url} />
+
+      <!-- Twitter --
+      <meta name="twitter:card" content="summary_large_image" />
+      <meta name="twitter:title" content={title} />
+      <meta name="twitter:description" content={abstract} />
+      <meta name="twitter:image" content={heroImage} />
+
+    <!--BaseHead Section -->
+
     <meta name="description" content={abstract} />
 
     <style>
