@@ -20,6 +20,14 @@ const images = import.meta.glob<{ default: ImageMetadata }>(
 <html lang="en">
   <head>
     <BaseHead title={title} description={abstract} />
+
+    <!-- Open Graph Meta Tags -->
+    <meta property="og:title" content={title} />
+    <meta property="og:description" content={abstract} />
+    <meta property="og:image" content={heroImage ? `https://totaltech-consulting.com${heroImage}` : 'https://totaltech-consulting.com/assets/logo.png'} />
+    <meta property="og:url" content={`https://totaltech-consulting.com/blog/${Astro.props.slug}`} />
+    <meta property="og:type" content="article" />
+
     <style>
       main {
         width: 100%;
