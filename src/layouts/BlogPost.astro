@@ -20,13 +20,21 @@ const images = import.meta.glob<{ default: ImageMetadata }>(
 <html lang="en">
   <head>
     <BaseHead title={title} description={abstract} />
-
-    <!-- Open Graph Meta Tags -->
+     
+    <meta name="description" content={abstract} />
+  
+    <!-- Open Graph / Facebook -->
     <meta property="og:title" content={title} />
     <meta property="og:description" content={abstract} />
-    <meta property="og:image" content={heroImage ? `https://totaltech-consulting.com${heroImage}` : 'https://totaltech-consulting.com/assets/logo.png'} />
-    <meta property="og:url" content={`https://totaltech-consulting.com/blog/${Astro.props.slug}`} />
+    <meta property="og:image" content={heroImage} />
     <meta property="og:type" content="article" />
+    <meta property="og:url" content={Astro.url} />
+
+    <!-- Twitter -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content={title} />
+    <meta name="twitter:description" content={abstract} />
+    <meta name="twitter:image" content={heroImage} />
 
     <style>
       main {
