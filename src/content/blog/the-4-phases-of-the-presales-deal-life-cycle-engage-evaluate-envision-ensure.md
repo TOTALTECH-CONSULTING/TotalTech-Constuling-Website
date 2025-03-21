@@ -46,13 +46,13 @@ In this phase it is critical that the SE not only uses available data to quantif
 
 There are always some macro level factors to consider in specific industries and public sector customers (Compliance, politics, environmental, ethical, etc.)  but ultimately the customer will likely be looking for a solution that is either/or **1) more cost effective, 2) more flexible 3) more performant/scalable**. 
 
-A thorough evaluation ensures that SE's offer a solution that is genuinely suitable for the prospect. This is a key stage for ensuring that any solution presented is aligned with the prospect’s needs. Proper evaluation helps avoid wasting time on unsuitable solutions and ensures the team is addressing the right challenges in the right way.
+A thorough evaluation ensures that SE's offer a solution that is genuinely suitable for the customer. This is a key stage for ensuring that any solution presented is aligned with the customer’s needs. Proper evaluation helps avoid wasting time on unsuitable solutions and ensures the team is addressing the right challenges in the right way.
 
 ## Phase 3: Envision – Designing the Tailored Solution
 
 ### **What’s Involved?**
 
-The **Envision** phase is where SE's begin to design the solution. At this stage, the SE takes the information from the Engage and Evaluate phases and designs a tailored solution that directly addresses the customer’s needs and challenges. The solution might involve product configurations, customizations, or even integrations with existing systems to ensure the proposal is as relevant and effective as possible**.  Services are also a critical component of the solution** (both pre and post implementation).
+The **Envision** phase is where SE's begin to design the solution. At this stage, the SE takes the information from the Engage and Evaluate phases and designs a tailored solution that directly addresses the customer’s needs and challenges. The solution might involve product configurations, customizations, or even integrations with existing systems to ensure the proposal is as relevant and effective as possible.  **Services are also a critical component of the solution** (both pre and post implementation).
 
 This phase also involves collaborating with different departments— technical teams, product experts, implementation teams and sometimes even legal or finance —to ensure the solution **1) meets all the necessary criteria 2) is priced as competitively as possible and 3) will provide an opportunity to expand the business.** The SE  needs to present a vision for how the solution will deliver value and achieve the customer’s goals.  SE's should use **peer reviews** during this stage to minimise the risk of errors, wrong assumptions and better understand **potential undocumented product behaviour** that peer SE's might have encountered in the past.
 
@@ -66,7 +66,7 @@ Envisioning a solution is the turning point in the presales cycle, as it moves f
 
 ### **What’s Involved?**
 
-The **Ensure** phase is the final step in the presales deal life cycle, where SE's  work to close the deal. This phase involves addressing any remaining objections, particularly competitive ones, reinforcing the value of the solution, and ensuring the prospect feels confident in their decision to move forward.  During this phase, presales teams may provide final **demonstrations**, share **case studies** or **testimonials**, and clarify any technical or business-related concerns the prospect may have. The goal is to remove any lingering doubts, solidify the solution’s benefits, and ensure that the prospect is ready to commit.
+The **Ensure** phase is the final step in the presales deal life cycle, where SE's  work to close the deal. This phase involves addressing any remaining objections, particularly competitive ones, reinforcing the value of the solution, and ensuring the prospect feels confident in their decision to move forward.  During this phase, SE's may provide final **demonstrations**, share **case studies** or **testimonials**, and clarify any technical or business-related concerns the prospect may have. The goal is to remove any lingering doubts, solidify the solution’s benefits, and ensure that the prospect is ready to commit.
 
 In addition to handling objections, SE's will  also work closely with the sales team to finalize pricing, terms, and implementation details, making sure everything is aligned before closing the deal.
 
@@ -76,6 +76,6 @@ The **Ensure** phase is essential because it’s where the SE combats final **ob
 
 ## Conclusion
 
-The presales deal life cycle—comprising the phases of **Engage, Evaluate, Envision, and Ensure**—plays a pivotal role in successfully closing deals. By understanding the prospect’s needs, designing tailored solutions, and addressing objections, SE's guide the sales process, increase the chances of closing deals, and build lasting relationships with clients.
+The presales deal life cycle—comprising the phases of **Engage, Evaluate, Envision, and Ensure**—plays a pivotal role in successfully closing deals. By understanding the customer’s needs, designing tailored solutions, and addressing objections, SE's guide the sales process, increase the chances of closing deals, and build lasting relationships with clients.
 
-Each phase of the presales cycle provides a strategic opportunity to demonstrate value, engage with the prospect, and differentiate from the competition. A well-executed presales process helps close more deals faster, ensuring both customer satisfaction and business growth.
+Each phase of the presales cycle provides a strategic opportunity to demonstrate value, engage with the customer, and differentiate from the competition. A well-executed presales process helps close more deals faster, ensuring both customer satisfaction and business growth.
