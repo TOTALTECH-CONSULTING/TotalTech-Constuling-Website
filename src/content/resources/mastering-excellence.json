@@ -1,22 +1,17 @@
 {
-    "id":6,
-
-    "category": "Mastering",
-    "secondarytitle": "Excellence",
-    "items": [
-      {
-        "description": "Mindtickle offers sales readiness training, helping teams improve their skills and performance.",
-        "logo": "/public/resources15.png",
-        "link": "https://www.storylane.io/"
-
-      },
-      {
-        "description": "GTMBuddy focuses on just-in-time enablement, delivering the right training and resources to sales teams exactly when they need it.",
-        "logo": "/public/resources16.png",
-        "link": "https://www.storylane.io/"
-
-      }
-    ]
-  }
-
-
+  "id": 6,
+  "category": "Mastering",
+  "secondarytitle": "Excellence",
+  "items": [
+    {
+      "description": "Mindtickle offers sales readiness training, helping teams improve their skills and performance.",
+      "logo": "/public/resources15.png",
+      "link": "https://www.mindtickle.com/"
+    },
+    {
+      "description": "GTMBuddy focuses on just-in-time enablement, delivering the right training and resources to sales teams exactly when they need it.",
+      "logo": "/public/resources16.png",
+      "link": "https://gtmbuddy.ai/"
+    }
+  ]
+}
