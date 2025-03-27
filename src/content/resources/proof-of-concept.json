@@ -1,22 +1,17 @@
 {
-    "id":4,
-
-    "category": "Proof of",
-    "secondarytitle": "Concept",
-    "items": [
-      {
-        "description": "Proov.io specializes in simplifying and streamlining the process of delivering Proof-of-Concepts (PoCs) for presales teams.",
-        "logo": "/public/resources11.png",
-        "link": "https://www.storylane.io/"
-
-      },
-      {
-        "description": "Homerun is designed to manage complex evaluations by centralizing feedback, decision-making processes, and workflows.",
-        "logo": "/public/resources12.png",
-        "link": "https://www.storylane.io/"
-
-
-      }
-    ]
-  }
-  
+  "id": 4,
+  "category": "Proof of",
+  "secondarytitle": "Concept",
+  "items": [
+    {
+      "description": "Proov.io specializes in simplifying and streamlining the process of delivering Proof-of-Concepts (PoCs) for presales teams.",
+      "logo": "/public/resources11.png",
+      "link": "https://proov.io/"
+    },
+    {
+      "description": "Homerun is designed to manage complex evaluations by centralizing feedback, decision-making processes, and workflows.",
+      "logo": "/public/resources12.png",
+      "link": "https://www.homerunpresales.com/"
+    }
+  ]
+}
