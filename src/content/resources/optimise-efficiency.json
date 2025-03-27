@@ -1,22 +1,17 @@
 {
-    "id":7,
-
-    "category": "Optimize",
-    "secondarytitle": "Efficiency",
-    "items": [
-      {
-        "description": "Gong uses conversation intelligence to analyze sales calls, providing insights into customer interactions.",
-        "logo": "/public/resources17.png",
-        "link": "https://www.storylane.io/"
-
-
-      },
-      {
-        "description": "Revenue Grid enhances pipeline visibility by detecting deal risks and providing actionable insights into sales opportunities.",
-        "logo": "/public/resources18.png",
-        "link": "https://www.storylane.io/"
-
-      }
-    ]
-  }
-  
+  "id": 7,
+  "category": "Optimize",
+  "secondarytitle": "Efficiency",
+  "items": [
+    {
+      "description": "Gong uses conversation intelligence to analyze sales calls, providing insights into customer interactions.",
+      "logo": "/public/resources17.png",
+      "link": "https://www.gong.io/"
+    },
+    {
+      "description": "Revenue Grid enhances pipeline visibility by detecting deal risks and providing actionable insights into sales opportunities.",
+      "logo": "/public/resources18.png",
+      "link": "https://revenuegrid.com/"
+    }
+  ]
+}
