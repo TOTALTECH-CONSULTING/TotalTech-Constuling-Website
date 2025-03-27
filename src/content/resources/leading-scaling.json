@@ -1,22 +1,12 @@
 {
-    "id":8,
-
-    "category": "Leading &",
-    "secondarytitle": "Scaling",
-    "items": [
-      {
-        "description": "PreSkale is a platform designed to optimize the efficiency of presales teams, offering tools to manage resources, track evaluation progress, and enhance collaboration across product, sales, and technical teams.",
-        "logo": "/public/resources19.png",
-        "link": "https://www.storylane.io/"
-
-      },
-      {
-        "description": "Vivun is an AI-powered platform designed to optimize the presales process, particularly for sales engineering teams.",
-        "logo": "/public/resources20.png",
-        "link": "https://www.storylane.io/"
-
-
-      }
-    ]
-  }
-  
+  "id": 8,
+  "category": "Leading &",
+  "secondarytitle": "Scaling",
+  "items": [
+    {
+      "description": "Vivun is an AI-powered platform designed to optimize the presales process, particularly for sales engineering teams.",
+      "logo": "/public/resources20.png",
+      "link": "https://www.vivun.com/"
+    }
+  ]
+}
