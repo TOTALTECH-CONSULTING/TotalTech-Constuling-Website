@@ -1,32 +1,22 @@
 {
-    "id":1,
-    "category": "Presales",
-    "secondarytitle": "Ecosystem",
-    "items": [
-      {
-        "description": "A global community that offers webinars, certifications, and a range of resources to help presales professionals thrive.",
-        "logo": "/public/resources1.png",
-        "link": "https://www.storylane.io/"
-
-      },
-      {
-        "description": "A comprehensive resource designed to support presales professionals in mastering the art and science of technical sales.",
-        "logo": "/public/resources2.png",
-        "link": "https://www.storylane.io/"
-
-      },
-      {
-        "description": "The Presales Coach provides specialized training, coaching, and mentoring services for presales professionals.",
-        "logo": "/public/resources3.png",
-        "link": "https://www.storylane.io/"
-
-      },
-      {
-        "description": "The PreSales Academy offers a set of resources, training materials, and tools that focus specifically on developing the skills of presales professionals.",
-        "logo": "/public/resources4.png",
-        "link": "https://www.storylane.io/"
-
-      }
-    ]
-  }
-  
+  "id": 1,
+  "category": "Presales",
+  "secondarytitle": "Ecosystem",
+  "items": [
+    {
+      "description": "A global community that offers webinars, certifications, and a range of resources to help presales professionals thrive.",
+      "logo": "/public/resources1.png",
+      "link": "https://www.presalescollective.com/"
+    },
+    {
+      "description": "A comprehensive resource designed to support presales professionals in mastering the art and science of technical sales.",
+      "logo": "/public/resources2.png",
+      "link": "https://masteringtechnicalsales.com/"
+    },
+    {
+      "description": "The Presales Coach provides specialized training, coaching, and mentoring services for presales professionals.",
+      "logo": "/public/resources3.png",
+      "link": "https://thepresalescoach.com/"
+    }
+  ]
+}
