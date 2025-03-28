@@ -9,6 +9,7 @@ abstract: The Presales function is a crucial component of any technology sales
   technical support, operations, senior leadership, and partners. In this
   article, I will explore the significance of Presales, its impact on business
   success, and how it seamlessly connects these functions.
+blog_link: https://www.youtube.com/embed/xu7SkZPhhFQ
 ---
 *Reading time 7 minutes*
 

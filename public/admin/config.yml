@@ -19,6 +19,7 @@ collections:
       - { label: "Author", name: "author", widget: "string" }
       - { label: "Abstract", name: "abstract", widget: "text" }
       - { label: "Body", name: "body", widget: "markdown" }
+      - {blog_link: "Blog Link", name: "blog_link", widget: "string" }
 
 
   - name: "testimonials"
