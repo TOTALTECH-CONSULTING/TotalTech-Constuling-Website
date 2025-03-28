@@ -7,9 +7,11 @@ import react from "@astrojs/react";
 
 import netlify from "@astrojs/netlify";
 
+import partytown from "@astrojs/partytown";
+
 // https://astro.build/config
 export default defineConfig({
   site: "https://totaltech-consulting.com/",
-  integrations: [mdx(), sitemap(), react()],
+  integrations: [mdx(), sitemap(), react(), partytown({ config: { forward: ['dataLayer.push'] } })],
   adapter: netlify(),
 });
