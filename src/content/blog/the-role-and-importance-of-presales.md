@@ -179,15 +179,3 @@ With over 25 years of experience in Presales leadership, I offer a variety of se
 **Operational Excellence:** Optimizing SE operations to streamline workflows and enhance collaboration.
 
 **Sales & Technical Alignment:** Ensuring alignment between sales and technical teams for smooth customer outcomes.
-
-[Take a look at this brief video](https://www.youtube.com/watch?v=xu7SkZPhhFQ)
-
-Get in touch: 
-
-info@totaltech-consulting.com
-
-<https://totaltech-consulting.com/contact>
-
-[Subscribe to my Youtube Channel](https://www.youtube.com/@TotalTech-Consulting)
-
-<https://www.youtube.com/@TotalTech-Consulting>
