@@ -23,7 +23,7 @@ In today’s competitive B2B environment, SE's are critical in shaping the path 
 
 #### Phase 1: Engage – Laying the Foundation
 
-###### What’s Involved?
+##### What’s Involved?
 
 The Engage phase is the first step in building a relationship with the prospect. This is the stage where SE's , in collaboration with the sales team, initiate contact and begin gathering information about the customer’s needs, goals, and pain points. It's the phase for asking the right questions and understanding the key challenges the prospect is facing.  
 
