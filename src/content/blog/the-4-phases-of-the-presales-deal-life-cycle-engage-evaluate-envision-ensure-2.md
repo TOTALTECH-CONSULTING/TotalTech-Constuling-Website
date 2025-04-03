@@ -13,7 +13,7 @@ abstract: In today’s competitive B2B environment, SE's are critical in shaping
   article, we’ll break down the four main phases of the presales deal life
   cycle—Engage, Evaluate, Envision, and Ensure—and explore how each contributes
   to driving success.
-blog_link: https://www.youtube.com/watch?v=xu7SkZPhhFQ
+blog_link: https://youtu.be/xu7SkZPhhFQ?si=ZKTb2cxV4CD4js1Y
 ---
 *Reading time 7 minutes*
 
