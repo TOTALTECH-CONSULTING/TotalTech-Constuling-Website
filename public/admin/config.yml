@@ -13,13 +13,15 @@ collections:
     create: true
     slug: "{{slug}}"
     fields:
-      - { label: "Title", name: "title", widget: "string" }
-      - { label: "Publication Date", name: "pubDate", widget: "datetime" }
-      - { label: "Hero Image", name: "heroImage", widget: "image" }
-      - { label: "Author", name: "author", widget: "string" }
-      - { label: "Abstract", name: "abstract", widget: "text" }
-      - { label: "Body", name: "body", widget: "markdown" }
-      - {blog_link: "Blog Link", name: "blog_link", widget: "string" }
+      - { label: "Title", name: "title", widget: "string", required: false}
+      - { label: "Publication Date", name: "pubDate", widget: "datetime" , required: false}
+      - { label: "Hero Image", name: "heroImage", widget: "image" , required: false}
+      - { label: "Author", name: "author", widget: "string" , required: false}
+      - { label: "Abstract", name: "abstract", widget: "text" , required: false}
+      - { label: "Body", name: "body", widget: "markdown" , required: false}
+      - {blog_link: "Blog Link", name: "blog_link", widget: "string" , required: false}
+      # dropdown for categories
+      - { label: "Category", name: "category", widget: "select", options: ["Video", "Article"] , required: true}
 
 
   - name: "testimonials"

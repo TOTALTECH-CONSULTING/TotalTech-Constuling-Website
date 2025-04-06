@@ -69,6 +69,7 @@ const images = import.meta.glob<{ default: ImageMetadata }>(
         <ul>
           {
             posts.map((post) => (
+
               <li>
                 <img
                   class="displayImage"
@@ -170,9 +171,34 @@ const images = import.meta.glob<{ default: ImageMetadata }>(
     const visiblePosts = posts.slice(startIndex, endIndex);
 
     visiblePosts.forEach((post) => {
+      let linkHtml;
+
+      if (post.data.category === "Video") {
+        linkHtml = `<a href="${post.data.blog_link}" target="_blank" rel="noopener noreferrer"><img class="displayImage" width="720" height="360" src="${post.data.heroImage}" alt=""></a>`;
+      } else {
+        linkHtml = `<a href="/blog/${post.id}/"><img class="displayImage" width="720" height="360" src="${post.data.heroImage}" alt=""></a>`;
+      }
+
+      let LearnMore;
+      if (post.data.category === "Video") {
+        LearnMore = `<a class="btn" href="${post.data.blog_link}" target="_blank" rel="noopener noreferrer">Learn More ➞</a>`;
+      } else {
+        LearnMore = `<a class="btn" href="/blog/${post.id}/">Learn More ➞</a>`;
+      }
+
+      let ArticleorVideo ;
+      if (post.data.category === "Video") {
+        ArticleorVideo = `<p class="category">
+          <img src="/play_button.svg" alt="video" />
+          Video</p>`;
+      } else {
+        ArticleorVideo = `<p class="category">
+          <img src="/article.svg" alt="article" />
+          Article</p>`;
+      }
       const postItem = document.createElement("li");
       postItem.innerHTML = `
-        <a href="/blog/${post.id}/" /><img class="displayImage" width="720" height="360" src="${post.data.heroImage}" alt=""> <a/>
+      ${linkHtml}
         <h4 class="title">${post.data.title}</h4>
         <div class="content">
           <div class="dateauthor">
@@ -184,12 +210,13 @@ const images = import.meta.glob<{ default: ImageMetadata }>(
               <img src="/author.png" alt="author" />
               ${post.data.author}
             </p>
+            ${ArticleorVideo}
           </div>
           <svg width="268" height="4" viewBox="0 0 268 4" fill="none">
             <line y1="1.73096" x2="268" y2="1.73096" stroke="#F0840E" stroke-width="3" />
           </svg>
           <p>${post.data.abstract}</p>
-          <a class="btn" href="/blog/${post.id}/">Learn More ➞</a>
+          ${LearnMore}
         </div>
       `;
       postList.appendChild(postItem);
