@@ -9,7 +9,6 @@ abstract: The Presales function is a crucial component of any technology sales
   technical support, operations, senior leadership, and partners. In this
   article, I will explore the significance of Presales, its impact on business
   success, and how it seamlessly connects these functions.
-# blog_link: https://totaltech-consulting.com/blog/the-role-and-importance-of-presales/
 category: Article
 ---
 *Reading time 7 minutes*
@@ -145,6 +144,6 @@ While SEs are critical for business success, leading an SE team comes with its o
 
 **Post-Sale Engagement:** Ensuring that customer success teams are aligned and identifying opportunities for upselling and cross-selling after the deal is closed is crucial.
 
-**Conclusion**
+#### **Conclusion**
 
 No matter how you look at it, the Presales function is essential for any company trying to take technology to market.  This is obviously more relevant in a B2B enviroment, and when there is a degree of complexity, integration and business value attached to the solution.  Building, developping and leading a Presales organisation is a demanding task requiring a broad set of skills and attributes.  Don't hesitate to get in touch if I can be of assistance.
