@@ -1,7 +1,7 @@
 ---
 title: Chat with Mike Phelan, SVP field engineering at Nutanix.  All about Presales...
 pubDate: 2025-04-22T07:20:00.000Z
-heroImage: /public/thumbnail.jpg
+heroImage: /public/phelan_thumbnail.jpg
 author: Bertrand Lalanne, Mike Phelan
 abstract: Insightful fireside chat type conversation with Mike, where you'll get
   to hear how his career in Presales began, his views on the key attributes of
