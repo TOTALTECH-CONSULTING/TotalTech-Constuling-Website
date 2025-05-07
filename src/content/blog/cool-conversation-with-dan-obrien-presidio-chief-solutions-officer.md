@@ -1,7 +1,7 @@
 ---
 title: " Cool conversation with Dan O'brien, Presidio - Chief Solutions Officer"
 pubDate: 2025-05-07T17:05:00.000Z
-heroImage: /public/thumbnail.jpg
+heroImage: /public/obrien_thumbnail.jpg
 author: Bertrand Lalanne
 abstract: Cool conversation with Dan O'brien, Presidio - Chief Solutions Officer
 blog_link: https://www.youtube.com/watch?v=vhHRQY4KqJ4
